@@ -1,0 +1,162 @@
+/* General container layout */
+.artist-details-row {
+  display: flex;
+  gap: 36px;
+  padding: 20px;
+}
+
+/* Left Container */
+.left-container {
+  width: 554px;
+  height: 633px;
+  position: absolute;
+  left: 56px;
+  top: 1080px;
+  padding: 20px;
+  border: 0.4px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Smoky shadow */
+  background-color: #fff;
+}
+
+.key-value-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.pair {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Aleo', sans-serif;
+  font-size: 16px;
+}
+
+.key {
+  font-weight: bold;
+  color: #333;
+}
+
+.value {
+  color: #666;
+}
+
+/* Right Container */
+.right-container {
+  width: 554px;
+  height: 633px;
+  position: absolute;
+  left: 646px;
+  top: 1080px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Smoky shadow */
+  background-color: #fff;
+  font-size: calc(1rem + 0.5vw); /* Adjust font size based on viewport */
+  overflow-y: auto;
+}
+
+/* Artist Image and Info */
+.artist-info {
+  display: flex;
+  align-items: flex-start; /* Align items at the top of the row */
+  gap: 20px;
+  margin-top: 60px; /* Space below the "Artist" heading */
+}
+
+.artist-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Perfectly circular */
+  margin-top: 10px; /* Slightly lower than the heading */
+}
+
+.artist-text h3 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+.artist-text p {
+  font-size: 16px;
+  color: #555;
+}
+
+.verified {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: green;
+}
+
+.verified-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+/* Buttons */
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: #CAFC9E;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* About Artist Section */
+.about-heading {
+  font-family: 'Aleo', sans-serif;
+  font-size: 24px;
+  margin: 20px 0 10px;
+}
+
+.about-paragraph {
+  font-family: 'Aleo', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 50px;
+  color: #333;
+}
+
+
+.spec-h2{
+  width: 225px;
+  height: 59px;
+  position: absolute;
+  left: 497px;
+  top: 1777px;
+
+  font-size: 36px;
+  font-family: 'Aleo';
+  line-height: auto;
+}
+
+.spec-p{
+  width: 1155px;
+  height: 115px;
+  position: absolute;
+  left: 37px;
+  top: 1867px;
+  font-size: 20px;
+  font-family: 'Aleo';
+}
+
+.spec-hr{
+  width: 1181px;
+  height: 0px;
+  position: absolute;
+  left: 19px;
+  top: 2009px;
+
+  
+}

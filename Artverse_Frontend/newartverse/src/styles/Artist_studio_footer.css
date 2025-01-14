@@ -1,0 +1,40 @@
+.footer {
+    width: 1219px;
+    height: 561px;
+    background-color: #f8f8f8;
+    display: flex;
+    padding: 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 1100px;
+  }
+  
+  .footer-logo {
+    width: 253px;
+    height: 329px;
+    background-image: url('../assets/images/ArtVerse_Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 914px;
+    height: 279px;
+    padding-left: 30px;
+  }
+  
+  .footer-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .footer-list {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.6;
+  }
+  

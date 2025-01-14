@@ -1,0 +1,161 @@
+.main-heading1 {
+  width: 380px;
+  height: 38px;
+  color: black;
+  text-align: left;
+  position: absolute;
+  left: 542px;
+  top: 820px;
+  font-size: 32px;
+  font-family: 'Aleo', sans-serif;
+  font-weight: 700; /* Makes the text bold */
+  margin-top: 13px;
+  letter-spacing: 7px;
+}
+
+.bold-line {
+  position: absolute;
+  left: 542px; /* Aligns the line exactly below the heading */
+  top: 881px; /* Position the line just below the heading, adjust as needed */
+  width: 365px; /* Same width as the heading */
+  height: 7px; /* Line thickness */
+  background-color: black; /* Pure black line */
+}
+
+/* Artist section container */
+.artist-cards1 {
+  display: flex;
+  justify-content: space-between; /* Ensures the images are displayed in parallel */
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  position: absolute;
+  left: 40px;
+  top: 930px;
+  gap: 50px;
+  max-height: calc(100vh - 200px); /* Set a maximum height relative to the viewport */
+  overflow-y: auto; /* Allows scrolling if the content exceeds the max height */
+}
+
+
+/* Individual artist card */
+.artist-card {
+  width: 282px; /* width for each card */
+  text-align: center;
+  
+  margin: 0 15px; /* Space between the cards */
+}
+
+/* Artist image style */
+.artist-image {
+  width: 300px;
+  height: 380px;
+  border: 1px solid black;
+  border-radius: 50px; /* Circular image */
+  margin-top: 200px;
+  object-fit: cover; /* Ensures the image covers the area properly */
+}
+
+/* Artist text */
+.artist-text h3 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Star image */
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+.star-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-top: 0px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .artist-cards1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .artist-card {
+    width: 240px; /* Adjust card width for smaller screens */
+  }
+
+  .main-heading1 {
+    font-size: 28px;
+    letter-spacing: 5px;
+  }
+
+  .bold-line {
+    width: 80%;
+    left: 10%;
+  }
+
+  .artist-image {
+    width: 250px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-cards1 {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 30px;
+  }
+
+  .artist-card {
+    width: 250px; /* Adjust card width for medium screens */
+  }
+
+  .main-heading1 {
+    font-size: 24px;
+  }
+
+  .star-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .bold-line {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-cards1 {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .artist-card {
+    width: 200px; /* Even smaller cards for mobile screens */
+  }
+
+  .main-heading1 {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .star-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bold-line {
+    width: 90%;
+    left: 5%;
+  }
+}

@@ -1,0 +1,43 @@
+.featured-art {
+  position: relative;
+  width: 1224px; /* Set custom width */
+  height: 636px; /* Set custom height */
+  margin: 0 auto; /* Center align */
+  overflow: hidden; /* To clip any overflowing content */
+}
+
+.background-image {
+  width: 100%; /* Full width to fit the container */
+  height: 100%; /* Full height to fit the container */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 30px; /* Position text near the bottom */
+  left: 50%; /* Center align horizontally */
+  transform: translateX(-50%); /* Center the text container */
+  text-align: center;
+  color: white;
+  width: 927px;
+}
+
+.winner-text {
+  font-family: 'Aleo', sans-serif;
+  font-size: 32px; /* Adjust font size */
+  font-weight: bold;
+  line-height: 30px;
+  letter-spacing: 10px;
+  color: #FFFFFF; /* White color for text */
+}
+
+.description-text {
+  font-family: 'Aleo', sans-serif;
+  font-size: 24px; /* Adjust font size */
+  font-weight: 400;
+  line-height: 30px;
+  margin-top: 10px; /* Small space between the title and description */
+  letter-spacing: 10px;
+
+  width: 928px;
+}

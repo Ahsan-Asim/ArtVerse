@@ -1,0 +1,9 @@
+.aboutUs{
+  width: 1224px;
+  height: 3900px;
+  position: relative;
+  border-radius: 30px;
+  background: rgba(255, 253, 244, 1);
+  box-sizing: border-box; 
+  margin: 0px auto;
+}

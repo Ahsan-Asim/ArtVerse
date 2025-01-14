@@ -1,0 +1,100 @@
+.sixth_sec
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 50px;
+}
+.sixth-button {
+    background-color: white; /* Button background color */
+    color: black; /* Text color */
+    position: relative;
+    left: 580px;
+    top: 4500px;
+    width: 220px;
+    height: 50px;
+    border: 3px solid black; /* No border */
+    border-radius: 30px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5); /* Soft, smoky shadow */
+    padding: 10px 20px; /* Padding for size */
+    font-size: 22px; /* Font size */
+    font-family: 'Aleo', sans-serif; /* Font style */
+    cursor: pointer; /* Pointer cursor on hover */
+    
+  }
+  
+  
+  .container1 {
+    display: flex;
+    margin-top: 20px;
+    position: relative; /* Change to relative */
+    top: 0; /* Remove unintended top positioning */
+    left: 0; /* Remove unintended left positioning */
+  }
+  
+  
+  .image-container {
+    flex: 1;
+  }
+  
+  .styled-image {
+    width: 687px;
+    height: 700px;
+    border-radius: 20px;
+  }
+  
+  .text-container {
+    flex: 1;
+    background-color: pink;
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 687px;
+    height: 700px;
+    border-radius: 20px;
+  
+  }
+  
+  .con-heading{
+    position: absolute;
+    top: 40px;
+    left: 741px;
+    width: 440px;
+    height: 58px;
+    font-family: 'Aleo';
+    font-size: 48px;
+    /* text-shadow: 100px 100px 100px 100px rgba(0, 0, 0, 0.5); Soft, smoky shadow */
+  }
+  .con-para{
+    position: absolute;
+    top: 200px;
+    left: 741px;
+    width: 440px;
+    height: 226px;
+    font-family: 'Aleo';
+    font-size: 20px;
+  }
+  .con-pic{
+    position: absolute;
+    top: 500px;
+    left: 741px;
+    width: 375px;
+    height: 112px;
+    font-family: 'Aleo';
+  
+  }
+  .con-head3{
+    position: absolute;
+    top: 625px;
+    left: 741px;
+    width: 324px;
+    height: 38px;
+    font-family: 'Aleo';
+    font-size: 20px;
+    /* text-shadow: 100px 100px 100px 100px rgba(0, 0, 0, 0.5); Soft, smoky shadow */
+  
+  }

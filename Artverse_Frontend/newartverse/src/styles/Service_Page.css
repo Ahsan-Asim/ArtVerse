@@ -1,0 +1,16 @@
+.Service_Page{
+    width: 1350px;
+    height: 4900px;
+    position: relative;
+    border: 5px solid black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: rgba(255, 253, 244, 1);
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+  
+
+}

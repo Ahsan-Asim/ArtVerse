@@ -1,0 +1,9 @@
+.cartpage{
+  width: 1224px;
+  min-height: 1700px;
+  position: relative;
+  border-radius: 30px;
+  background: rgba(255, 253, 244, 1);
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+  margin: 0px auto; /*Center the component horizontally*/
+}

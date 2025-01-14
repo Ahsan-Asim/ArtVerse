@@ -1,0 +1,110 @@
+.main-headin2 {
+  width: 560px;
+  height: 38px;
+  color: black;
+  align-items: center;
+  position: absolute;
+  left: 525px;
+  top: 1500px;
+  font-family: 'Aleo', sans-serif;
+  font-size: 32px;
+  font-weight: 500; /* Makes the text bold */
+  letter-spacing: 7px;
+  line-height: auto;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); /* Horizontal and Vertical offset, blur radius, color */
+}
+
+.text-with-background {
+  position: absolute;
+  width: 1400px;
+  height: 720px; /* Adjust height as needed */
+  left: 0px;
+  top: 1600px;
+  background-image: url('../assets/images/Landing_Page_Image2.png'); /* Replace with the actual path to your image */
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image within the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  color: white;
+  position: absolute;
+  width: 850px;
+  height: 58px;
+  font-size: 48px;
+  left: 700px;
+  top: 330px;
+  font-family: 'Aleo', sans-serif;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Light shadow for readability */
+  line-height: auto;
+  letter-spacing: 15px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screen sizes ≤ 1024px */
+@media (max-width: 1024px) {
+  .main-headin2 {
+    font-size: 28px;
+    left: 400px;
+  }
+
+  .text-with-background {
+    width: 100%;
+    height: 500px; /* Reduced height for smaller screens */
+  }
+
+  .overlay-text {
+    font-size: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width */
+    letter-spacing: 10px;
+  }
+}
+
+/* For screen sizes ≤ 768px */
+@media (max-width: 768px) {
+  .main-headin2 {
+    font-size: 24px;
+    left: 320px;
+  }
+
+  .text-with-background {
+    height: 400px; /* Reduced height for smaller screens */
+  }
+
+  .overlay-text {
+    font-size: 32px;
+    width: 85%; /* Adjust width for smaller screens */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 5px;
+  }
+}
+
+/* For screen sizes ≤ 480px (Mobile Devices) */
+@media (max-width: 480px) {
+  .main-headin2 {
+    font-size: 20px;
+    left: 250px;
+  }
+
+  .text-with-background {
+    height: 300px; /* Reduced height for mobile */
+  }
+
+  .overlay-text {
+    font-size: 24px;
+    width: 90%; /* Adjust width for mobile */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 3px;
+  }
+}

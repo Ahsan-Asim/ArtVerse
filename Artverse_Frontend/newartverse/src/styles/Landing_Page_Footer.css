@@ -1,0 +1,159 @@
+/* General footer styles */
+footer {
+    width: 1141px;
+    height: 410px;
+    background-color: #f8f8f8;
+    display: flex;
+    padding: 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 6300px;
+    left: 0px;
+  }
+  
+  footer .logo {
+    width: 253px;
+    height: 329px;
+    background-image: url(../assets/images/ArtVerse_Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 914px;
+    height: 279px;
+    padding-left: 30px;
+  }
+  
+  footer .footer-column {
+    width: 22%;
+  }
+  
+  footer h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  footer li {
+    font-size: 16px;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 1024px) {
+    footer {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 20px 10px;
+    }
+  
+    footer .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      background-size: contain;
+    }
+  
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    footer .footer-column {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    footer h4 {
+      font-size: 18px;
+    }
+  
+    footer li {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 15px 5px;
+    }
+  
+    footer .logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 20px;
+      background-size: contain;
+    }
+  
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    footer .footer-column {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+  
+    footer h4 {
+      font-size: 16px;
+    }
+  
+    footer li {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    footer .logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 15px;
+      background-size: contain;
+    }
+  
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    footer .footer-column {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    footer h4 {
+      font-size: 14px;
+    }
+  
+    footer li {
+      font-size: 12px;
+    }
+  }
+  

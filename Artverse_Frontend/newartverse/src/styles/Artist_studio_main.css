@@ -1,0 +1,144 @@
+.main-studio {
+  position: relative;
+  width: 1224px;
+  height: auto;
+  margin: 0 auto;
+  background-image: url('../assets/images/home10.png'); 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-studio h1 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1224px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.left-area h1 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+.right-area button {
+  font-family: 'Aleo', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.right-area button:hover {
+  background-color: #555;
+}
+
+/* Flex Layout for the Artwork List */
+.artwork-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 30px; /* Space between cards */
+  margin: 20px 0;
+  justify-content: space-between; /* Align items with equal spacing */
+}
+
+/* Artwork Card Styling */
+.artwork-card {
+  display: flex;
+  flex-direction: column; /* Stack image and details vertically */
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px; /* Fixed width for the card */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #fffdf4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+/* Artwork Image Container */
+.artwork-image-container {
+  width: 100%; /* Ensure image takes full width of the container */
+  height: 300px; /* Fixed height for image */
+  margin-bottom: 20px; /* Space between image and details */
+}
+
+.artwork-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Artwork Details Styling */
+.artwork-details {
+  font-family: 'Aleo', sans-serif;
+  color: #333;
+}
+
+.artwork-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details-group p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.details-group p strong {
+  font-weight: 600;
+  color: #333;
+}
+
+
+.artwork-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.edit-button, .delete-button {
+  font-family: 'Aleo', sans-serif;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #DC3545;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

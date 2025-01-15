@@ -41,7 +41,7 @@ export const Navigation = () => {
         {/* Centered Welcome Message */}
         <div className="navbar-row center-content">
           <form className="search-container" onSubmit={handleSearchSubmit}>
-          <h1 className="welcome-message">WELCOME TO ARTVERSE</h1>
+            <h1 className="welcome-message">WELCOME TO ARTVERSE</h1>
 
             <img src={SearchIcon} alt="Search Icon" className="search-icon" />
             <input
@@ -96,17 +96,16 @@ export const Navigation = () => {
               </a>
             </li>
             <li>
-            <div className="buttons">
-            <Link to="/signin" className="login_button">
-              Login
-            </Link>
-            <Link to="/signup" className="signup_button">
-              Signup
-            </Link>
-          </div>
+              <div className="buttons">
+                <Link to="/signin" className="login_button">
+                  Login
+                </Link>
+                <Link to="/signup" className="signup_button">
+                  Signup
+                </Link>
+              </div>
             </li>
           </ul>
-          
         </div>
       </div>
     </nav>

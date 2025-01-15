@@ -679,6 +679,14 @@ label {
     align-items: center; /* Center buttons */
     margin-top: 10px; /* Space above buttons */
   }
+  .logo {
+    width: 200px;
+    height: 100px;
+    position: relative; /* Allows additional positioning if needed */
+    left: 0;            /* Moves it to the left edge of its container */
+    margin-left: 0;     /* Ensures no unwanted margin on the left */
+  }
+  
 }
 
 
@@ -773,8 +781,6 @@ label {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-  margin-left: 100px;
-
   cursor: pointer;
 }
 
@@ -796,11 +802,15 @@ label {
   .navbar-nav {
     margin-top: 15px; /* Add space for better layout on mobile */
   }
-
   .logo {
-    width: 100px; /* Reduce logo size on smaller screens */
-    margin-top: -20px;
-}
+    width: 200px;
+    height: 100px;
+    position: relative; /* Allows additional positioning if needed */
+    left: 0;            /* Moves it to the left edge of its container */
+    margin-left: 0;     /* Ensures no unwanted margin on the left */
+  }
+  
+
 }
 
 .navbar-toggle {
@@ -851,7 +861,6 @@ label {
   display: flex;
   justify-content: space-between; /* Aligns text and image to opposite ends */
   align-items: center;
-  /* background: rgba(255, 253, 244, 1); */
   position: relative;
   /* background: rgba(255, 253, 244, 1); */
   box-sizing: border-box;
@@ -862,7 +871,7 @@ label {
 
 .image-container {
   max-width: 50%; /* Ensures image takes up the other half of the screen */
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: flex-end; /* Aligns image to the right */
 }

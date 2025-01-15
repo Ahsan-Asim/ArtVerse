@@ -82,7 +82,7 @@ hr {
 }
 #menu a.navbar-brand {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 10px;
   font-weight: 700;
   color: #333;
   text-transform: uppercase;
@@ -608,40 +608,200 @@ label {
 
 /**/
 .logo {
-  height: 100px; /* Adjust height to cover both rows */
-  width: auto; /* Maintain aspect ratio */
-  margin-right: 20px; /* Add spacing between logo and content */
+  width: 150px; /* Larger logo width */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px;
 }
 
-.navbar-content {
+/* .navbar-row {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center both rows */
-}
+  justify-content: center;
+  padding: 10px 0;
+} */
 
-.navbar-row {
-  width: 100%; /* Take full width */
-  text-align: center; /* Center-align text in each row */
-}
-
-.welcome-message h1 {
-  margin: 0; /* Remove extra spacing */
-  font-size: 24px; /* Adjust font size for the welcome message */
+/* .welcome-message {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
   font-weight: bold;
-}
+  color: #333;
+  margin: 0;
+} */
 
 .navbar-nav {
-  display: inline-flex; /* Arrange links in a row */
-  gap: 15px; /* Add space between links */
-  margin: 10px 0; /* Add spacing below the welcome message */
+  margin-top: 10px;
 }
 
-.navbar-nav li a {
-  font-size: 16px; /* Adjust font size for links */
-  text-transform: uppercase; /* Optional: make text uppercase */
+/* Welcome Message and Search */
+/* Centered Welcome Message */
+/* General styles */
+.navbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-.navbar {
-  padding: 10px 15px; /* Adjust padding to accommodate new layout */
+.welcome-message {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Aligns search bar to the right */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .welcome-message {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px; /* Add space below welcome message */
+  }
+
+  .search-container {
+    width: 100%; /* Full width for search bar */
+    justify-content: center; /* Center search bar */
+    margin-top: 10px; /* Space between welcome message and search bar */
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically in dropdown */
+    align-items: center; /* Center buttons */
+    margin-top: 10px; /* Space above buttons */
+  }
+}
+
+
+.center-content {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.welcome-message {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  background: linear-gradient(90deg, #fffdf4 65.5%, #998486 100%);
+  margin-left: auto;
+}
+
+.search-icon {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.search-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup_button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.signup_button:hover {
+  background-color: white;
+  color: black;
+}
+
+.login_button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 100px;
+
+  cursor: pointer;
+}
+
+.login_button:hover {
+  color: gray;
+}
+
+
+@media (max-width: 980px) {
+  .welcome-message {
+    font-size: 15px; /* Adjust font size for smaller screens */
+    margin-bottom: 100px;
+    margin-right: 100px;
+  }
+  .navbar-row{
+    align-items: center;
+  text-align: center;  }
+
+  .navbar-nav {
+    margin-top: 15px; /* Add space for better layout on mobile */
+  }
+
+  .logo {
+    width: 100px; /* Reduce logo size on smaller screens */
+  }
+}
+.navbar-toggle {
+  z-index: 1000; /* Ensure the button appears above other elements */
 }
 

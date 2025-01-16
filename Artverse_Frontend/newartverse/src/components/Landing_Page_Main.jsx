@@ -8,7 +8,7 @@ export const Landing_Page_Main = (props) => {
       <div className="container landing-page-container"> {/* Added class for styling */}
         <div className="row">
           <div className="col-xs-12 col-md-6">
-            <div className="about-text">
+            <div className="textabout-">
               <h2 className="main-heading">{props.data.mainHeading}</h2>
               <h5 className="second-heading">{props.data.secondHeading}</h5>
               <Link to="/signup" className="button-link">

@@ -12,7 +12,6 @@ export const Landing_Page_Forth_Section = (props) => {
                   {props.data ? props.data.title : "Explore Inspiring Designs"}
                   <span></span>
                 </h1>
-                <p>{props.data ? props.data.paragraph : "We Have Best Artwork"}</p>
                 <div className="text-with-background">
                   <h1 className="overlay-text">
                     <b>We Have Best Artwork</b>

@@ -28,4 +28,3 @@ export const Landing_Page_Sixth_Section = () => {
   );
 };
 
-export default Landing_Page_Sixth_Section;

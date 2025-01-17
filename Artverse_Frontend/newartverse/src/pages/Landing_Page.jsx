@@ -8,6 +8,7 @@ import { Landing_Page_fifth_Section } from "../components/Landing_Page_Fifth_Sec
 import { Landing_Page_Sixth_Section } from "../components/Landing_Page_Sixth_Section";
 import { Landing_Page_Seventh_Section } from "../components/Landing_Page_Seventh_Section";
 import { Footer } from "../components/Footer";
+import '../styles/Landing_Page_Css/LandingPage.css';
 
 const Landing_Page = () => {
   const [landingPageData, setLandingPageData] = useState({});

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Artist_Image from '../assets/images/Landing_Page_Image1.png'; // Adjust this path as necessary
-
+import '../styles/Landing_Page_Css/LandingPageMainSection.css';
 export const Landing_Page_Main = (props) => {
   return (
     <div id="about" style={{ marginTop: '200px' }}> {/* Added margin-top */}

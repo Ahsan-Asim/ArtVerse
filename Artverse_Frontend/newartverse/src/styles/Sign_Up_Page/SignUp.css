@@ -1,0 +1,28 @@
+/* General styling for SignUpPage */
+.signup-container {
+  display: flex;
+  min-height: 100vh; /* Full height */
+  width: 100%; /* Full width */
+  background-color: white;
+}
+
+/* Input and Button Styling */
+.signup-right-section input {
+  width: calc(100% - 20px); /* Full width with some margin on sides */
+  padding: 14px; /* Increased padding for larger fields */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column; /* Stack sections vertically */
+        height: auto; /* Allow content to determine height */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+    }
+
+    
+}

@@ -128,7 +128,7 @@ exports.googleSignin = async (req, res) => {
 // Controller to handle user signup
 exports.signup = async (req, res) => {
   try {
-    const { name, email, phone, password,role } = req.body;
+    const { firstName, lastName, email, phone, password, role, age, gender } = req.body;
 
     // Check if the email or phone already exists in the database
     const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
@@ -136,18 +136,28 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ message: 'Email or phone already in use.' });
     }
 
-    // Create a new user
+    // Hash the password before saving
+    // const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new user with the provided data
     const user = new User({
-      name,
+      firstName,
+      lastName,
       email,
       phone,
-      password,
-      role, // Ideally, hash the password before saving
+      password, // Save the hashed password
+      role,
+      age,
+      gender,
     });
 
+    // Save the new user to the database
     await user.save();
+
+    // Return a success response
     res.status(201).json({ message: 'User registered successfully!' });
   } catch (error) {
+    // Handle any errors
     res.status(500).json({ message: 'Server error', error });
   }
 };

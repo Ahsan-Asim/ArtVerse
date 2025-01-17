@@ -2,10 +2,19 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  name: {
+  firstName: {
     type: String,
     required: true,
     trim: true, // Removes extra spaces
+  },
+  lastName: {
+    type: String,
+    required: true,
+    trim: true, // Removes extra spaces
+  },
+  phone: {
+    type: String,
+    match: [/^\d{10}$/, 'Please enter a valid phone number'], 
   },
   email: {
     type: String,
@@ -13,9 +22,13 @@ const userSchema = new Schema({
     unique: true, 
     lowercase: true,
   },
-  phone: {
+  age: {
+    type: Number
+  },
+  gender: {
     type: String,
-    match: [/^\d{10}$/, 'Please enter a valid phone number'], 
+    enum: ['male', 'female', 'others'], 
+    default: 'male', 
   },
   password: {
     type: String,

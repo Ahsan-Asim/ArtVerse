@@ -1,0 +1,114 @@
+/* General styling for SignUpPage */
+.signup-container {
+  display: flex;
+  height: 100vh; /* Full height */
+  width: 100%; /* Full width */
+  background-color: white;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Left Image Section */
+.left-image-container {
+  flex-basis: auto; /* Allow the left image to maintain its size */
+  width: 50%; /* Set to 50% of the screen width */
+}
+
+.left-image-container img {
+  width: 100%; /* Ensure the image takes full width of its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Right Section */
+.right-section {
+  flex-grow: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 40px; /* Increased padding for larger screens */
+  align-items: center;
+}
+
+/* Input and Button Styling */
+.signup-right-section input {
+  width: calc(100% - 20px); /* Full width with some margin on sides */
+  padding: 14px; /* Increased padding for larger fields */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.signup-submit-button {
+  width: calc(100% - 20px); /* Full width with some margin on sides */
+  padding: 14px; /* Increased padding for button */
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px; /* Increased button text size */
+}
+
+.signup-submit-button:hover {
+  background-color: #574bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column; /* Stack sections vertically */
+        height: auto; /* Allow content to determine height */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+    }
+
+    .left-image-container {
+        width: 100%; /* Full width for small screens */
+        height: auto; /* Allow height to adjust based on content */
+        display: flex; /* Center image in container */
+        justify-content: center; /* Center align image horizontally */
+        align-items: center; /* Center align image vertically */
+        padding-top: 20px; /* Add some space above the image */
+    }
+
+    .right-section {
+        padding: 20px; /* Adjust padding for smaller screens */
+        text-align: center; /* Center align text */
+        height: auto; /* Allow right section to adjust height */
+    }
+}
+
+@media (max-width: 480px) {
+    .right-section {
+        padding: 10px; /* Reduce padding further */
+    }
+
+    .logo2 {
+        width: 120px; /* Smaller logo size on mobile devices */
+        margin-bottom: 10px; /* Space below logo */
+    }
+
+    .sign_div2 {
+        font-size: larger; /* Larger heading size on mobile devices */
+        margin-bottom: 15px;
+    }
+
+    .email-input,
+    .password-input,
+    .name-input,
+    .phone-input,
+    .age-input,
+    .gender-select { 
+        font-size: small; /* Smaller input fields text size */
+        padding: 8px; /* Smaller input fields padding */
+        margin-bottom: 10px; /* Adjust margin for inputs */
+        width: calc(100% - 20px); /* Full width with some margin on sides */
+        border-radius: 10px; /* Slightly rounded corners for inputs */
+        border-color: #ccc;
+    }
+
+    .signup-submit-button {
+       font-size: medium; 
+       padding :10px ; 
+       border-radius :10px ; 
+       margin-top :10px ; 
+   }
+}

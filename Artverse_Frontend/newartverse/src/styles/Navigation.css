@@ -1,0 +1,10 @@
+.navigation {
+  position: relative!important; /* Ensure it doesn’t overlap */
+  z-index: 1000!important; /* Keep it above other elements if needed */
+  background: #fff!important; /* Add background if transparent */
+  padding: 10px 0!important; /* Adjust padding for spacing */
+}
+
+.content-wrapper {
+  margin-top: 60px!important; /* Add spacing below header to separate content */
+}

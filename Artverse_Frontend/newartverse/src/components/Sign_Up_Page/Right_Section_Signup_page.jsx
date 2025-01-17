@@ -12,8 +12,9 @@ function Right_Section_Signup_page() {
    const [formData, setFormData] = useState({
       firstName: '',
       lastName: '',
-      phone: '',
       email: '',
+      phone: '',
+      role:'',
       age:'',
       gender:'',
       password:'',

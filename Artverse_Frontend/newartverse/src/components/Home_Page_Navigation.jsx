@@ -59,6 +59,11 @@ export const Home_Page_Navigation = () => {
           </Link>
         </div>
 
+        {/* Welcome Message Section */}
+        <div className="welcome-message">
+          <h1>Welcome to ArtVerse!</h1>
+        </div>
+
         {/* Search Section */}
         <div className="navbar-row center-content">
           <form className="search-container" onSubmit={handleSearchSubmit}>

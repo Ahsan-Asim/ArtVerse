@@ -19,6 +19,17 @@
   margin-right: 10px;
 }
 
+/* Welcome Message */
+.welcome-message {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.welcome-message h1 {
+  font-size: 24px;
+  color: #333;
+}
+
 /* Search Section */
 .search-container {
   display: flex;
@@ -80,4 +91,20 @@
 
 .nav-link:hover {
   color: #5ca9fb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-message h1 {
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    display: block;
+    text-align: center;
+  }
+
+  .icon-links {
+    justify-content: center;
+  }
 }

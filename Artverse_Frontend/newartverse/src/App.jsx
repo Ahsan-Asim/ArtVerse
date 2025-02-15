@@ -6,6 +6,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import Landing_Page from './pages/Landing_Page';
 import Sign_In from './pages/Sign_In';
 import Sign_Up from './pages/Sign_Up';
+import Image_search from './pages/Image_search.jsx';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const MainContent = () => {
         <Route path="/" element={<Landing_Page />} />
         <Route path="/signin" element={<Sign_In />} />
         <Route path="/signup" element={<Sign_Up />} />
+        <Route path="/image_search" element={<Image_search />} />
       </Routes>
     </>
   );

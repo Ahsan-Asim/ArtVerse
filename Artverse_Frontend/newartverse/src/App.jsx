@@ -7,6 +7,7 @@ import Sign_In from './pages/Sign_In';
 import Sign_Up from './pages/Sign_Up';
 import HomePage from './pages/home_page';
 import Profile from './pages/profile';
+import Service_Page from './pages/Service_Page';
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -32,6 +33,7 @@ const MainContent = () => {
         <Route path="/signup" element={<Sign_Up />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/services" element={<Service_Page />} />
 
       </Routes>
     </>

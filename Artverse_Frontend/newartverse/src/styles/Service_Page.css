@@ -1,0 +1,37 @@
+.Service_Page {
+  width: 90%; /* Use percentage for responsiveness */
+  max-width: 1350px; /* Limit maximum width */
+  height: auto; /* Allow height to adjust based on content */
+  position: relative;
+  border: 5px solid black;
+  border-radius: 30px; /* Shortened border-radius */
+  background: rgba(255, 253, 244, 1);
+  box-sizing: border-box;
+  margin: 20px auto; /* Add some margin for spacing */
+  overflow: hidden;
+  padding: 20px; /* Add padding to prevent content from sticking to edges */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .Service_Page {
+      width: 95%; /* Slightly increase width for medium screens */
+      padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Service_Page {
+      width: 98%; /* Take full width on smaller devices */
+      border-width: 3px; /* Reduce border thickness */
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Service_Page {
+      width: 100%;
+      border-width: 2px;
+      padding: 5px;
+  }
+}

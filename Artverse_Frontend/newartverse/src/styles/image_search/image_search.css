@@ -1,0 +1,8 @@
+.image_search {
+ 
+    position: relative;
+    background: rgba(255, 253, 244, 1);
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+  }

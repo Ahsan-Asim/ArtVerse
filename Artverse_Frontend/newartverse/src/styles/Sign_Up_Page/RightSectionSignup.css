@@ -1,0 +1,85 @@
+/* Center the signup right section */
+.signup-right-section {
+  width: 100%;
+  max-width: 400px; /* Max width for the form */
+  text-align: center; /* Center text inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  margin: auto auto;
+  box-sizing: border-box; /* Ensures padding/border are included in the width/height calculation */
+}
+
+
+
+/* Make sure the form fills available space and is centered */
+.signup-form {
+  width: 100%; /* Take up full width of the container */
+}
+
+/* Form input styles */
+.signup-right-section input,
+.signup-right-section select {
+  width: calc(100% - 20px); /* Full width with padding on sides */
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.signup-submit-button {
+  width: calc(100% - 20px); /* Full width with padding */
+  padding: 12px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.signup-submit-button:hover {
+  background-color: #574bff;
+}
+
+/* Logo styling */
+.signup-logo {
+  width: 155px; 
+  height: auto;
+  margin: 0 auto;
+}
+
+.signup-title {
+  font-size: 32px; 
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Error message styling */
+.error-message { 
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+/* Increase the font size of form labels */
+.name-label,
+.phone-label,
+.email-label,
+.age-label,
+.gender-label,
+.password-label {
+  font-size: 18px; /* Adjust to your preferred size */
+  font-weight: bold; /* Optional: Make the label text bold */
+  color: #333; /* Ensure the label color stands out */
+}
+
+/* Other form elements remain the same, for example, input styling */
+.signup-right-section input,
+.signup-right-section select {
+  width: calc(100% - 20px); /* Full width with padding on sides */
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

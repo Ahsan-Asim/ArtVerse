@@ -1,0 +1,75 @@
+/* General styling for SignInPage */
+.signin-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f5f5f5, #ffffff);
+  overflow: hidden;
+}
+
+/* Left Image Section */
+.left-image-container {
+  flex: 0 0 auto; /* Prevent flex from shrinking */
+  width: 50%; /* Set to 50% of the screen width */
+}
+
+.left-image-container img {
+  width: 100%; /* Ensure the image takes full width of its container */
+  height: 100%;
+}
+
+/* Right Section */
+.right-section {
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Increased padding for larger screens */
+  background: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signin-container {
+    flex-direction: column; /* Stack left and right sections vertically */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .left-image-container {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    display: flex; /* Center image in container */
+    justify-content: center; /* Center align image horizontally */
+    align-items: center; /* Center align image vertically */
+    padding-top: 20px; /* Add some space above the image */
+  }
+
+  .right-section {
+    padding: 20px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align text */
+    height: auto; /* Allow right section to adjust height */
+  }
+}
+
+/* Further adjustments for smaller screens */
+@media (max-width: 480px) {
+  .right-section {
+    padding: 10px; /* Reduce padding further */
+    font-size: smaller; /* Reduce font size for smaller screens */
+  }
+
+  .signin-button {
+    font-size: 14px; /* Smaller button text size */
+    padding: 8px; /* Smaller button padding */
+    width: auto; /* Adjust button width */
+    border-radius: 5px; /* Adjust border radius for buttons */
+  }
+
+  .email-input,
+  .password-input {
+    font-size: smaller; /* Smaller input fields text size */
+    padding: 8px; /* Smaller input fields padding */
+    margin-bottom: 10px; /* Adjust margin for inputs */
+  }
+}

@@ -1,0 +1,127 @@
+/* Right Section Styling */
+.right-section1 {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo10,.or-text
+ {
+  width: 120px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  bottom: 70px; /* Moves the logo 200px from its normal position */
+}
+
+.sign_div1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  bottom: 70px; /* Moves the logo 200px from its normal position */
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.google-login-btn:hover {
+  background-color: #357ae8;
+}
+
+.signin-form1 {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.email-input,
+.password-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signin-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signin-button:hover {
+  background-color: #574bff;
+}
+
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-link {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Styling for form labels */
+.email-label,
+.password-label {
+  font-size: 18px; /* Increase font size for labels */
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  display: block; /* Ensure the label takes up a full line */
+}
+
+/* Styling for "Forget?" link */
+.password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #6c63ff;
+  cursor: pointer;
+  margin-left: 40px; /* Adjust the spacing to move it right by 40px */
+}
+
+/* Optional: Adjust the hover effect for forgot password */
+.forgot-password:hover {
+  text-decoration: underline;
+}

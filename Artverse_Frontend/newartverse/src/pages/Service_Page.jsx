@@ -5,8 +5,10 @@ import '../styles/Service_Page.css'; // Ensure to import your custom CSS
 import Service_Page_Main from '../components/Service_Page_Main';
 import Service_Page_Paintings from '../components/Service_Page_Paintings';
 import Service_Page_Meet_Artists from '../components/Service_Page_Meet_Artists';
-import { Footer } from '../components/Footer';
+// import { Footer } from '../components/Footer';
 // import Service_Page_Footer from '../components/Service_Page_Footer';
+import { Footer } from '../components/Footer';
+
 
 
 function Service_Page() {

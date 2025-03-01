@@ -124,11 +124,10 @@ exports.googleSignin = async (req, res) => {
 
 
 ////////////////////////////////////////////////
-
-// Controller to handle user signup
+// Controller to handle user 
 exports.signup = async (req, res) => {
   try {
-    const { firstName, lastName, email, phone, password, role, age, gender } = req.body;
+    const { firstName,lastName, email, phone,age,gender, password,role } = req.body;
 
     // Check if the email or phone already exists in the database
     const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
@@ -136,31 +135,25 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ message: 'Email or phone already in use.' });
     }
 
-    // Hash the password before saving
-    // const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create a new user with the provided data
+    // Create a new user
     const user = new User({
       firstName,
       lastName,
       email,
       phone,
-      password, // Save the hashed password
-      role,
       age,
       gender,
+      password,
+      role, // Ideally, hash the password before saving
     });
 
-    // Save the new user to the database
     await user.save();
-
-    // Return a success response
     res.status(201).json({ message: 'User registered successfully!' });
   } catch (error) {
-    // Handle any errors
     res.status(500).json({ message: 'Server error', error });
   }
 };
+
 
 
 exports.getUserStatus = async (req, res) => {
@@ -360,20 +353,39 @@ exports.becomeArtist = async (req, res) => {
 // };
 
 // Example: Backend route to fetch user details
+// exports.getUserByEmail = async (req, res) => {
+//   const { email } = req.params;
+
+//   try {
+//     const user = await User.findOne({ email }).populate('artistDetails');
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found.' });
+//     }
+//     res.status(200).json(user);
+//   } catch (error) {
+//     console.error('Error fetching user:', error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// };
 exports.getUserByEmail = async (req, res) => {
   const { email } = req.params;
 
   try {
-    const user = await User.findOne({ email }).populate('artistDetails');
+    const user = await User.findOne({ email })
+      .populate('artistDetails') // Populate artist details if needed
+      .populate('artworks'); // Populate artworks
+
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
-    res.status(200).json(user);
+
+    res.status(200).json(user); // Now the user object will contain artworks
   } catch (error) {
     console.error('Error fetching user:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };
+
 
 
 exports.updateArtist = async (req, res) => {

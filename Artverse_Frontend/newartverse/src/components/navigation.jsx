@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/ArtVerse_Logo.png";
 import SearchIcon from "../assets/images/search.png";
-
+import '../styles/Navigation.css'
 export const Navigation = () => {
   const [searchQuery, setSearchQuery] = useState("");
 

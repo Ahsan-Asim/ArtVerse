@@ -1,6 +1,7 @@
 // Landing_Page.jsx
 import React, { useEffect, useState } from "react";
 import data from '../data/data.json';
+import { Navigation } from '../components/navigation';
 import { Landing_Page_Main } from "../components/Landing_Page_Main";
 import { Landing_Page_Artist_Section } from "../components/Landing_Page_Artist_Section";
 import { Landing_Page_Forth_Section } from "../components/Landing_Page_Forth_Section";
@@ -21,6 +22,7 @@ const Landing_Page = () => {
     <div className="Landing_page">
       {landingPageData.LandingPage ? (
         <>
+          <Navigation />
           <Landing_Page_Main data={landingPageData.LandingPage} />
           <Landing_Page_Artist_Section />
           <Landing_Page_Forth_Section data={landingPageData.LandingPageForthSection} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageSearch = () => {
+const ImageSearchMain = () => {
   const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [results, setResults] = useState([]);
@@ -196,4 +196,4 @@ const ImageSearch = () => {
   );
 };
 
-export default ImageSearch;
+export default ImageSearchMain;

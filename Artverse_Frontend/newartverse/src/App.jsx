@@ -7,6 +7,9 @@ import Sign_In from './pages/Sign_In';
 import Sign_Up from './pages/Sign_Up';
 import HomePage from './pages/home_page';
 import Profile from './pages/profile';
+import Service_Page from './pages/Service_Page';
+import ImageSearch from './pages/Image_search'
+import Customize from '.pages/customize_page'
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -25,14 +28,15 @@ const MainContent = () => {
   return (
     <>
       {/* Render Navigation only on paths other than "/signin" */}
-      {location.pathname !== '/signin' && location.pathname !== '/signup' && location.pathname !== '/profile' &&location.pathname !== '/home' && <Navigation />}
       <Routes>
         <Route path="/" element={<Landing_Page />} />
         <Route path="/signin" element={<Sign_In />} />
         <Route path="/signup" element={<Sign_Up />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<Profile />} />
-
+        <Route path="/image_search" element={<ImageSearch />} />
+        <Route path="/customize" element={<Customize />} />
+        <Route path="/services" element={<Service_Page />} />
       </Routes>
     </>
   );

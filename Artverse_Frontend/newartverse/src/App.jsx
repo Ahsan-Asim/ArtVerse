@@ -9,7 +9,8 @@ import HomePage from './pages/home_page';
 import Profile from './pages/profile';
 import Service_Page from './pages/Service_Page';
 import ImageSearch from './pages/Image_search'
-import Customize from '.pages/customize_page'
+import CustomizePage from './pages/customize_page.jsx';
+
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -35,7 +36,7 @@ const MainContent = () => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/image_search" element={<ImageSearch />} />
-        <Route path="/customize" element={<Customize />} />
+        <Route path="/customize/:serviceId" element={<CustomizePage />} />
         <Route path="/services" element={<Service_Page />} />
       </Routes>
     </>

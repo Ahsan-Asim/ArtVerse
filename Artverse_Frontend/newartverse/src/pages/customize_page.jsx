@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import '../styles/CustomizePage.css'
 import { useParams } from 'react-router-dom';
-import '../styles/CustomizePage.css';
+import axios from 'axios';
 
-function customize_page_main() {
+function CustomizePage() {
   const { serviceId } = useParams();
   const [budget, setBudget] = useState('');
   const [time, setTime] = useState('');
@@ -13,9 +14,20 @@ function customize_page_main() {
     setImage(e.target.files[0]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ serviceId, budget, time, description, image });
+    const formData = new FormData();
+    formData.append('serviceId', serviceId);
+    formData.append('budget', budget);
+    formData.append('time', time);
+    formData.append('description', description);
+    formData.append('image', image);
+
+    await axios.post('http://localhost:5000/submit-request', {
+      serviceId, budget, time, description, image: image ? image.name : ''
+    });
+
+    alert('Request submitted successfully!');
   };
 
   return (
@@ -40,4 +52,4 @@ function customize_page_main() {
   );
 }
 
-export default customize_page_main;
+export default CustomizePage;

@@ -103,7 +103,7 @@ export const NavigationBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/paintings" className="nav-item">
+              <Link to="/Paintings_Market" className="nav-item">
                 Paintings
               </Link>
             </li>

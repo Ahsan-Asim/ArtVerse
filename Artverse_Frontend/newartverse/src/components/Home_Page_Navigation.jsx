@@ -5,23 +5,31 @@ import SearchIcon from "../assets/images/search.png";
 import ShoppingIcon from "../assets/images/shopping.png";
 import LikeIcon from "../assets/images/heart.png";
 import DefaultProfileIcon from "../assets/images/default_profile.jpeg";
-import "../styles/Home_Page_Navigation.css";
+import cameraIcon from "../assets/images/camera.jpg";
+import "../styles/HomePage/Home_Page_Navigation.css";
 
-export const Home_Page_Navigation = () => {
+export const NavigationBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [artistProfileImage, setArtistProfileImage] = useState("");
+  const [artistProfileImage, setArtistProfileImage] = useState(DefaultProfileIcon);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const artistEmail = sessionStorage.getItem("email"); // Fetch email from sessionStorage
+    const artistEmail = sessionStorage.getItem("email");
     if (artistEmail) {
       fetch(`http://localhost:4000/api/artist/image?email=${artistEmail}`)
         .then((response) => response.json())
         .then((data) => {
-          if (data.profileImage) setArtistProfileImage(data.profileImage);
+          if (data.profileImage) {
+            setArtistProfileImage(data.profileImage);
+          }
         })
         .catch((err) => console.error("Error fetching artist data: ", err));
     }
   }, []);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -30,109 +38,86 @@ export const Home_Page_Navigation = () => {
     }
   };
 
-  const handleAddToCart = () => {
-    const userEmail = sessionStorage.getItem("email");
-    if (!userEmail) {
-      alert("Please sign in to add items to your cart.");
-      return;
-    }
-  };
-
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
-      <div className="container">
+    <nav className="navbar navbar-default navbar-fixed-top">
+      <div className="wrapper">
         {/* Logo Section */}
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar-collapse"
-          >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+        <div className="nav-header">
+          {/* Toggle Button */}
+          <button className={`nav-toggle ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
           </button>
-          <Link to="/" className="navbar-brand">
-            <img src={Logo} alt="ArtVerse Logo" className="logo" />
+
+          <Link to="/" className="brand-logo">
+            <img src={Logo} alt="ArtVerse Logo" className="brand-image" />
+          </Link>
+          {/* Icons Section (Like, Cart & Profile) */}
+        <div className="nav-icons">
+          <Link to="/favorites">
+            <img src={LikeIcon} alt="Like Icon" className="icon like-icon" />
+          </Link>
+          <Link to="/cart">
+            <img src={ShoppingIcon} alt="Shopping Icon" className="icon cart-icon" />
+          </Link>
+          <Link to="/profile">
+            <img src={artistProfileImage} alt="Profile Icon" className="icon profile-icon" />
           </Link>
         </div>
+        </div>
 
-        {/* Welcome Message Section */}
-        <div className="welcome-message">
+        {/* Welcome Section */}
+        <div className="welcome-section">
           <h1>Welcome to ArtVerse!</h1>
         </div>
 
         {/* Search Section */}
-        <div className="navbar-row center-content">
-          <form className="search-container" onSubmit={handleSearchSubmit}>
-            <img src={SearchIcon} alt="Search Icon" className="search-icon" />
+        <div className="nav-row center-box">
+          <form className="search-box" onSubmit={handleSearchSubmit}>
+            <img src={SearchIcon} alt="Search Icon" className="search-symbol" />
             <input
               type="text"
-              placeholder="Search Artworks"
-              className="search-input"
+              placeholder="Search Artwork"
+              className="search-field"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
             />
-            {searchQuery && (
-              <button type="submit" className="search-btn">
-                Search
-              </button>
-            )}
+            <Link to="/image_search">
+              <img src={cameraIcon} alt="Camera Icon" className="photo-icon" />
+            </Link>
           </form>
         </div>
 
-        {/* Navigation Links */}
-        <div className="collapse navbar-collapse" id="navbar-collapse">
-          <ul className="nav navbar-nav">
+        {/* Navigation Menu */}
+        <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
+          <ul className="nav-list">
             <li>
-              <Link to="/become-artist" className="nav-link">
+              <Link to="/become-artist" className="nav-item">
                 Become Artist
               </Link>
             </li>
             <li>
-              <Link to="/about" className="nav-link">
+              <Link to="/about" className="nav-item">
                 Why Us
               </Link>
             </li>
             <li>
-              <Link to="/paintings" className="nav-link">
+              <Link to="/paintings" className="nav-item">
                 Paintings
               </Link>
             </li>
             <li>
-              <Link to="/sculptures" className="nav-link">
+              <Link to="/sculptures" className="nav-item">
                 Sculptures
               </Link>
             </li>
             <li>
-              <Link to="/photography" className="nav-link">
+              <Link to="/photography" className="nav-item">
                 Photography
               </Link>
             </li>
           </ul>
-
-          {/* Icons Section */}
-          <div className="icon-links">
-            <Link to="/cartpage" className="icon-link" onClick={handleAddToCart}>
-              <img src={ShoppingIcon} alt="Cart" className="icon shopping-icon" />
-            </Link>
-            <Link to="/favorites" className="icon-link">
-              <img src={LikeIcon} alt="Favorites" className="icon like-icon" />
-            </Link>
-            <Link to="/profile" className="icon-link">
-              <img
-                src={
-                  artistProfileImage
-                    ? `http://localhost:4000/${artistProfileImage}`
-                    : DefaultProfileIcon
-                }
-                alt="Profile"
-                className="icon profile-icon"
-              />
-            </Link>
-          </div>
         </div>
       </div>
     </nav>

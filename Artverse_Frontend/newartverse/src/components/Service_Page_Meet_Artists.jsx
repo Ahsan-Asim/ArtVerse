@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Service_Page_Meet_Artists.css';
+import '../styles/ServicePage/Service_Page_Meet_Artists.css';
 import ArtistImage from '../assets/images/Artist_Image.png';
 import VerifiedIcon from '../assets/images/verified_icon.png';
 

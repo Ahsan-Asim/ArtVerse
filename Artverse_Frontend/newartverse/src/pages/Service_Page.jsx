@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/Service_Page.css'; // Ensure to import your custom CSS
+import '../styles/ServicePage/Service_Page.css'; // Ensure to import your custom CSS
 // import Service_Page_Header from '../components/Service_Page_Header';
 import { Navigation } from '../components/navigation';
 import Service_Page_Main from '../components/Service_Page_Main';

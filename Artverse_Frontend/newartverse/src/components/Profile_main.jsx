@@ -18,7 +18,7 @@ import {
 // import MDBox from "./MDBox";
 import { Settings, Upload, Home } from "@mui/icons-material";
 import DefaultProfileIcon from "../assets/images/default_profile.jpeg";
-import '../styles/profile_main.css';
+import '../styles/ProfilePage/profile_main.css';
 
 export const Profile_main = () => {
   const [userData, setUserData] = useState(null);

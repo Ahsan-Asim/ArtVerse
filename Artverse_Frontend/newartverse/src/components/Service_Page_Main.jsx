@@ -1,6 +1,6 @@
 import React from 'react';
 import FeaturedImage1 from '../assets/images/Service_Page_Image1.png';
-import '../styles/Service_Page_Main.css';
+import '../styles/ServicePage/Service_Page_Main.css';
 
 function Service_Page_Main() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Home_Category_Section.css"; // Ensure to import your custom CSS
+import "../styles/HomePage/Home_Category_Section.css"; // Ensure to import your custom CSS
 import SerigraphImage from "../assets/images/home2.png";
 import DrawingImage from "../assets/images/home3.png";
 import PaintingImage from "../assets/images/home4.png";

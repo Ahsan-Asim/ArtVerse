@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Service_Page_Paintings.css';
+import '../styles/ServicePage//Service_Page_Paintings.css';
 
 function Service_Page_Paintings() {
   const navigate = useNavigate();

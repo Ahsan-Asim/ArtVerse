@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Home_Page_Image.css'; // Ensure to import your custom CSS
+import '../styles/HomePage/Home_Page_Image.css'; // Ensure to import your custom CSS
 import FeaturedImage from '../assets/images/home1.png'; // Replace with the correct path to your image
 
 function Home_Page_Image() {

@@ -1,5 +1,5 @@
 import './App.css';
-import { Navigation } from "./components/navigation";
+import { Navigation } from "./components/navigation.jsx";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Landing_Page from './pages/Landing_Page';
@@ -10,7 +10,7 @@ import Profile from './pages/profile';
 import Service_Page from './pages/Service_Page';
 import ImageSearch from './pages/Image_search'
 import CustomizePage from './pages/customize_page.jsx';
-
+//import PaintingMarket from './pages/Painting_market.jsx'
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -38,6 +38,7 @@ const MainContent = () => {
         <Route path="/image_search" element={<ImageSearch />} />
         <Route path="/customize/:serviceId" element={<CustomizePage />} />
         <Route path="/services" element={<Service_Page />} />
+
       </Routes>
     </>
   );

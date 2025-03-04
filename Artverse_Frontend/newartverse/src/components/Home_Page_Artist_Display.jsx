@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DefaultProfileIcon from "../assets/images/default_profile.jpeg";
 import StarImage from "../assets/images/Artist_Stars.png";
-import "../styles/Home_Page_Artist_Display.css"; // Custom CSS
+import "../styles/HomePage/Home_Page_Artist_Display.css"; // Custom CSS
 
 function Home_Page_Artist_Display() {
   const [artists, setArtists] = useState([]);

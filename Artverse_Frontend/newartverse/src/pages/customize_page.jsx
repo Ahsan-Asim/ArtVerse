@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/CustomizePage.css'
+import '../styles/CustomizePage.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-function CustomizePage() {
+function CustomizationPage() {
   const { serviceId } = useParams();
   const [budget, setBudget] = useState('');
   const [time, setTime] = useState('');
@@ -31,7 +31,7 @@ function CustomizePage() {
   };
 
   return (
-    <div className="customize-container">
+    <div className="customization-container">
       <h2>Customize Your {serviceId.replace('-', ' ')}</h2>
       <form onSubmit={handleSubmit}>
         <label>Upload Image:</label>
@@ -52,4 +52,4 @@ function CustomizePage() {
   );
 }
 
-export default CustomizePage;
+export default CustomizationPage;

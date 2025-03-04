@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/HomePage.css'; // Ensure to import your custom CSS
+import '../styles/HomePage/HomePage.css'; // Ensure to import your custom CSS
 // import Home_Page_Header from '../components/Home_Page_Header';
 import Home_Page_Image from '../components/Home_Page_Image';
 import { Footer } from '../components/Footer';
@@ -10,7 +10,7 @@ import { Landing_Page_fifth_Section } from '../components/Landing_Page_Fifth_Sec
 import axios from 'axios';
 import Home_Category_Section from '../components/Home_Page_Category_Section';
 import Home_Page_Artist_Display from '../components/Home_Page_Artist_Display';
-import { Home_Page_Navigation } from '../components/Home_Page_Navigation';
+import { NavigationBar } from '../components/Home_Page_Navigation';
 
 const HomePage = () => {
   const [user, setUser] = useState(null);  // State to hold user data
@@ -58,8 +58,8 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <Home_Page_Navigation /> {/* Ensure header is properly styled */}
-      <div className="content-wrapper">
+      <NavigationBar /> {/* Ensure header is properly styled */}
+      <div className="content-wrapper" style={{ paddingTop: "180px" }}>
         <Home_Page_Image />
         {/* Other components */}
         <Home_Category_Section />

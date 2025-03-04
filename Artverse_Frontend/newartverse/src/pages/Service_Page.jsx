@@ -15,6 +15,7 @@ import { Footer } from '../components/Footer';
 function Service_Page() {
   return (
     <div className='Service_Page'>
+      {/* <Navigation /> */}
       <Navigation />
       <Service_Page_Main />
       <Service_Page_Paintings />

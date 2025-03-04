@@ -1,0 +1,94 @@
+.custom-profile-box {
+  padding: 32px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-profile-left {
+  text-align: center;
+}
+
+.profile-icon {
+  width: 120px;
+  height: 120px;
+}
+
+.custom-update-button {
+  width: 150px;
+  margin-top: 16px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.custom-profile-right {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-user-name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.custom-role {
+  font-size: 18px;
+  color: gray;
+}
+
+.custom-home-button,
+.custom-settings-button,
+.custom-upload-button {
+  font-size: 35px;
+}
+
+.custom-profile-info-title {
+  margin-top: 32px;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.custom-profile-card {
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-name-field,
+.custom-email-field,
+.custom-role-field,
+.custom-phone-field,
+.custom-country-field,
+.custom-state-field,
+.custom-city-field,
+.custom-address-field {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.custom-save-button,
+.custom-cancel-button,
+.custom-edit-button {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.custom-cancel-button {
+  margin-left: 16px;
+}
+
+.custom-about-section {
+  margin-top: 32px;
+}
+
+.custom-about-card,
+.custom-other-info-card {
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-about-text,
+.custom-other-info-text {
+  font-size: 18px;
+}

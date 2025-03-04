@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/ArtVerse_Logo.png";
 import SearchIcon from "../assets/images/search.png";
+import cameraIcon from "../assets/images/camera.jpg";
+import "../styles/Navigation.css";
 
 export const Navigation = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [artistProfileImage, setArtistProfileImage] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false); // Add state for menu toggle
+
+  useEffect(() => {
+    const artistEmail = sessionStorage.getItem("email");
+    if (artistEmail) {
+      fetch(`http://localhost:4000/api/artist/image?email=${artistEmail}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.profileImage) setArtistProfileImage(data.profileImage);
+        })
+        .catch((err) => console.error("Error fetching artist data: ", err));
+    }
+  }, []);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -12,97 +28,66 @@ export const Navigation = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    if (searchQuery) {
+    if (searchQuery.trim()) {
       window.location.href = `/search?title=${searchQuery}`;
     }
   };
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
-      <div className="container">
-        {/* Logo */}
-        <div className="navbar-header">
+    <nav id="nav-container" className="navbar navbar-default navbar-fixed-top">
+      <div className="wrapper">
+        {/* Logo Section */}
+        <div className="nav-header">
+          {/* Toggle Button */}
           <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
+            className={`nav-toggle ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
           </button>
-          <Link to="/" className="navbar-brand">
-            <img src={Logo} alt="ArtVerse Logo" className="logo" />
+
+          <Link to="/" className="brand-logo">
+            <img src={Logo} alt="ArtVerse Logo" className="brand-image" />
           </Link>
         </div>
 
-        {/* Centered Welcome Message */}
-        <div className="navbar-row center-content">
-          <form className="search-container" onSubmit={handleSearchSubmit}>
-            <h1 className="welcome-message">WELCOME TO ARTVERSE</h1>
+        {/* Welcome Section */}
+        <div className="welcome-section">
+          <h1>Welcome to ArtVerse!</h1>
+        </div>
 
-            <img src={SearchIcon} alt="Search Icon" className="search-icon" />
+        {/* Search Section */}
+        <div className="nav-row center-box">
+          <form className="search-box" onSubmit={handleSearchSubmit}>
+            <img src={SearchIcon} alt="Search Icon" className="search-symbol" />
             <input
               type="text"
               placeholder="Search Artwork"
-              className="search-input"
+              className="search-field"
               value={searchQuery}
               onChange={handleSearchChange}
             />
-            {searchQuery && (
-              <button type="submit" className="search-btn">
-                Search
-              </button>
-            )}
+            <Link to="/image_search">
+              <img src={cameraIcon} alt="Camera Icon" className="photo-icon" />
+            </Link>
           </form>
         </div>
 
-        {/* Navigation Links and Buttons */}
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-        >
+        {/* Navigation Menu */}
+        <div className={`nav-collapse ${menuOpen ? "open" : ""}`} id="nav-collapse">
           <ul className="nav navbar-nav">
-            <li>
-              <a href="#about" className="page-scroll">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="page-scroll">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#team" className="page-scroll">
-                Digital Art
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Explore More
-              </a>
-            </li>
+            <li><a href="#about" className="page-scroll">About</a></li>
+            <li><a href="#services" className="page-scroll">Services</a></li>
+            <li><a href="#portfolio" className="page-scroll">Gallery</a></li>
+            <li><a href="#testimonials" className="page-scroll">Testimonials</a></li>
+            <li><a href="#team" className="page-scroll">Digital Art</a></li>
+            <li><a href="#contact" className="page-scroll">Explore More</a></li>
             <li>
               <div className="buttons">
-                <Link to="/signin" className="login_button">
-                  Login
-                </Link>
-                <Link to="/signup" className="signup_button">
-                  Signup
-                </Link>
+                <Link to="/signin" className="login_button">Login</Link>
+                <Link to="/signup" className="signup_button">Signup</Link>
               </div>
             </li>
           </ul>

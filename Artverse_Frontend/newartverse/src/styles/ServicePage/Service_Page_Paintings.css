@@ -1,0 +1,123 @@
+.service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.art-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.art-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.art-card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.art-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.art-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.artist-name {
+  font-size: 14px;
+  color: #777;
+}
+
+.load-more {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-more:hover {
+  background-color: #555;
+}
+
+.service-line {
+  width: 80%;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 1024px) {
+  .art-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .art-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .art-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-container {
+    padding: 10px;
+  }
+
+  .art-title {
+    font-size: 18px;
+  }
+
+  .art-subtitle {
+    font-size: 14px;
+  }
+
+  .artist-name {
+    font-size: 12px;
+  }
+
+  .load-more {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageSearch = () => {
+const ImageSearchMain = () => {
   const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [results, setResults] = useState([]);
@@ -39,7 +39,7 @@ const ImageSearch = () => {
   };
 
   return (
-    <div style={{ padding: "30px", paddingTop: "30px", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ padding: "30px", fontFamily: "Arial, sans-serif" }}>
       <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px" }}>
         Upload an Image or Enter URL
       </h2>
@@ -196,4 +196,4 @@ const ImageSearch = () => {
   );
 };
 
-export default ImageSearch;
+export default ImageSearchMain;

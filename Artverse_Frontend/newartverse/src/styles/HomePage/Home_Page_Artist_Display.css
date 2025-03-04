@@ -1,0 +1,109 @@
+/* Section Title */
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  color: #333;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #777;
+}
+
+/* Artist Section */
+.home-artist-section {
+  padding: 100px 0;
+  background: #f6f6f6;
+}
+
+/* Artist Card */
+.artist .thumbnail {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.artist .thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Artist Caption */
+.artist .caption {
+  padding: 15px;
+  text-align: center;
+}
+
+.artist .caption h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.stars img {
+  width: 80px;
+  height: auto;
+}
+
+/* Follow Button */
+.follow-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.follow-button.following {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.follow-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .artist {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .artist {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

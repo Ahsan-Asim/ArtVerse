@@ -1,0 +1,86 @@
+.featured-art1 {
+  position: relative;
+  width: 100%; /* Makes it responsive */
+  max-width: 1550px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 100px; /* Ensures it starts below the header */
+  border: none;
+
+}
+
+.background-image1 {
+  width: 100%; /* Full width to fit the container */
+  height: 650px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.overlay-text1 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+  max-width: 927px;
+}
+
+.winner-text1 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 58px;
+  color: #FFFFFF;
+}
+
+.description-text1 {
+  font-family: 'Aleo', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 58px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .featured-art1 {
+    padding-top: 80px;
+  }
+  .winner-text1 {
+    font-size: 28px;
+  }
+  .description-text1 {
+    font-size: 20px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-art1 {
+    padding-top: 70px;
+  }
+  .winner-text1 {
+    font-size: 24px;
+  }
+  .description-text1 {
+    font-size: 18px;
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-art1 {
+    padding-top: 60px;
+  }
+  .winner-text1 {
+    font-size: 20px;
+  }
+  .description-text1 {
+    font-size: 16px;
+    line-height: 40px;
+  }
+}
+

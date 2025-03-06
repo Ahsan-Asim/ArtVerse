@@ -73,28 +73,6 @@ const downloadImage = async (imageUrl, filename) => {
   }
 };
 
-// Route to fetch random or filtered artworks (Limited to 30)
-app.get("/api/artworks/filtered", async (req, res) => {
-  try {
-    const { minPrice, maxPrice, medium, style, artist } = req.query;
-    let filter = {};
-
-    if (minPrice && maxPrice) filter.price = { $gte: Number(minPrice), $lte: Number(maxPrice) };
-    if (medium) filter.medium = medium;
-    if (style) filter.style = style;
-    if (artist) filter.artist = artist;
-
-    console.log("MongoDB Query:", filter);
-
-    const paintings = await Artwork.find(filter).limit(30);
-    console.log("Fetched paintings:", paintings.length);
-
-    res.json(Array.isArray(paintings) ? paintings : []);
-  } catch (error) {
-    console.error("Error fetching filtered paintings:", error);
-    res.status(500).json([]); // Always return an array
-  }
-});
 
 // Set up API routes
 app.use("/api/users", userRouter);

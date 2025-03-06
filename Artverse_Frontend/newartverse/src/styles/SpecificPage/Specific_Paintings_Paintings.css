@@ -1,0 +1,106 @@
+.main-headin3 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.art-cards-container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.art-card1 {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.art-card1:hover {
+  transform: scale(1.05);
+}
+
+.card-image1 {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.card-details1 {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-details1 {
+  flex: 1;
+}
+
+.art-title1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.artist-name1,
+.art-type1,
+.art-material1,
+.dimensions1 {
+  font-size: 14px;
+  color: #666;
+  margin: 3px 0;
+}
+
+.right-details1 {
+  text-align: right;
+}
+
+.price-old1 {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.price-new1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e60023;
+}
+
+.discount1 {
+  font-size: 14px;
+  color: green;
+  font-weight: bold;
+}
+
+.card-buttons1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f8f8f8;
+  border-top: 1px solid #ddd;
+}
+
+.icon-container1 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-container1:hover {
+  transform: scale(1.2);
+}
+
+.icon-container1 img {
+  width: 20px;
+  height: 20px;
+}

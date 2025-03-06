@@ -14,13 +14,21 @@ function Paintings_Market() {
     style: "",
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const paintingsPerPage = 50;
+
   useEffect(() => {
     fetchFilteredPaintings();
-  }, [filters]);
+  }, [filters, currentPage]); // Fetch when filters or page changes
 
   const fetchFilteredPaintings = async () => {
     try {
-      const queryParams = new URLSearchParams(filters).toString();
+      // Remove empty filters before sending request
+      const cleanFilters = Object.fromEntries(
+        Object.entries(filters).filter(([_, value]) => value !== "")
+      );
+  
+      const queryParams = new URLSearchParams(cleanFilters).toString();
       const response = await fetch(`http://localhost:4000/api/artwork/filtered?${queryParams}`);
       const data = await response.json();
   
@@ -38,15 +46,14 @@ function Paintings_Market() {
     }
   };
   
+
   return (
     <div>
       <NavigationBar />
 
       <div style={{ display: "flex", paddingTop: "150px", minHeight: "80vh" }}>
-        {/* Left Sidebar (Filters) */}
         <FilterComponent onFilterChange={setFilters} />
 
-        {/* Right Side (Artworks) */}
         <div style={{ flex: 1, padding: "20px" }}>
           <PaintingList paintings={paintings} />
         </div>

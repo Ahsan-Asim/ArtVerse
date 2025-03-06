@@ -1,13 +1,14 @@
 import React from "react";
 
 const PaintingList = ({ paintings }) => {
-    console.log("Displaying paintings count:", paintings.length); // 🔍 Log count
+    console.log("Displaying paintings count:", paintings.length); 
+
     return (
       <div style={{ padding: "30px", fontFamily: "Arial, sans-serif" }}>
         <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px" }}>
           🎨 Featured Paintings ({paintings.length})
         </h2>
-  
+
         <div
           style={{
             display: "grid",
@@ -21,12 +22,13 @@ const PaintingList = ({ paintings }) => {
               <h3>{painting.title}</h3>
               <p>Artist: {painting.artist}</p>
               <p>Price: ${painting.Price}</p>
-              <p>Style: ${painting.style}</p>
-              <p>Medium: ${painting.medium}</p>
+              <p>Style: {painting.style}</p>
+              <p>Medium: {painting.medium}</p>
             </div>
           ))}
         </div>
       </div>
     );
-  };
-  export default PaintingList;
+};
+
+export default PaintingList;

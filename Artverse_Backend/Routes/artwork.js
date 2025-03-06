@@ -41,13 +41,26 @@ router.get("/getArtwork/:email", async (req, res) => {
 // 🔍 Artwork search route
 router.get("/search", async (req, res) => {
   try {
-    const { title } = req.query;
-    const artworks = await Artwork.find({ title: new RegExp(title, "i") });
-    res.json(artworks);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    const query = req.query.artwork; // Change from 'title' to 'artwork'
+    console.log("Received search query:", query); // Debugging log
+
+    if (!query) {
+      return res.status(400).json({ error: "Missing artwork query parameter" });
+    }
+
+    // Search MongoDB using case-insensitive regex
+    const results = await Artwork.find({
+      artwork: { $regex: new RegExp(query, "i") }, // 'i' makes it case-insensitive
+    });
+
+    console.log("Search results:", results); // Debugging log
+    res.json(results);
+  } catch (error) {
+    console.error("Error searching artworks:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
+
 
 // ❌ Route to delete artwork
 router.delete("/delete", async (req, res) => {
@@ -123,33 +136,61 @@ router.get("/filters", async (req, res) => {
 
 router.get("/filtered", async (req, res) => {
   try {
-    const { minPrice, maxPrice, medium, artist, style } = req.query;
-    let matchStage = {}; // Filtering criteria
+    console.log("Incoming Query Params:", req.query); // Debugging log
 
-    if (minPrice && maxPrice) {
-      matchStage.Price = { $gte: Number(minPrice), $lte: Number(maxPrice) };
+    let { minPrice, maxPrice, medium, artist, style } = req.query;
+    let matchStage = {};
+
+    // Ensure price is a valid number
+    if (minPrice && minPrice !== "undefined" && maxPrice && maxPrice !== "undefined") {
+      matchStage.Price = { $gte: Number(minPrice) || 0, $lte: Number(maxPrice) || Infinity };
     }
-    if (medium) {
-      matchStage.medium = medium;
+
+    // Make medium, artist, and style case-insensitive
+    if (medium && medium !== "undefined") {
+      matchStage.medium = { $regex: new RegExp(medium, "i") };
     }
-    if (artist) {
+    if (artist && artist !== "undefined") {
       matchStage.artist = { $regex: new RegExp(artist, "i") };
     }
-    if (style) {
+    if (style && style !== "undefined") {
       matchStage.style = { $regex: new RegExp(style, "i") };
     }
 
-    const randomPaintings = await Artwork.aggregate([
-      { $match: matchStage }, // Apply filters
-      { $sample: { size: 30 } }, // Pick 30 random documents
-      { $limit: 30 } // Ensure limit
-    ]);
+    console.log("MongoDB Query:", matchStage); // Debugging log
 
-    console.log("Fetched Random Paintings:", randomPaintings.length); // Log count
-    res.json(randomPaintings);
+    const filteredPaintings = await Artwork.find(matchStage);
+    console.log("Filtered Paintings Count:", filteredPaintings.length); // Debugging log
+
+    res.json(filteredPaintings);
   } catch (error) {
-    console.error("Error fetching random paintings:", error);
+    console.error("Error fetching filtered paintings:", error);
     res.status(500).json({ message: "Server error" });
+  }
+});
+router.get("/random", async (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit) || 9;
+    const artworks = await Artwork.aggregate([{ $sample: { size: limit } }]); // ✅ Use `Artwork` instead of `ArtworkModel`
+    res.json(artworks);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching random artworks" });
+  }
+});
+router.get('/paintings', async (req, res) => {
+  try {
+    console.log("Fetching artwork..."); // Debugging log
+
+    const paintings = await Artwork.aggregate([{ $sample: { size: 9 } }]); // Fetch 9 random artworks
+
+    if (!paintings || paintings.length === 0) {
+      return res.status(404).json({ message: "No artwork found" });
+    }
+
+    res.json(paintings);
+  } catch (error) {
+    console.error('Database error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
 

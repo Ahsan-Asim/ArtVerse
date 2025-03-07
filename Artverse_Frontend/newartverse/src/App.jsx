@@ -10,7 +10,9 @@ import Profile from './pages/profile';
 import Service_Page from './pages/Service_Page';
 import ImageSearch from './pages/Image_search'
 import CustomizePage from './pages/customize_page.jsx';
-//import PaintingMarket from './pages/Painting_market.jsx'
+import Paintings_Market from './pages/Paintings_Market.jsx'
+import Specific_Painting_Page from './pages/Specific_Painting_Page.jsx'
+import SearchPage from './pages/Search_page.jsx';
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -38,6 +40,9 @@ const MainContent = () => {
         <Route path="/image_search" element={<ImageSearch />} />
         <Route path="/customize/:serviceId" element={<CustomizePage />} />
         <Route path="/services" element={<Service_Page />} />
+        <Route path="/Paintings_Market" element={<Paintings_Market />} />
+        <Route path="/Painting" element={<Specific_Painting_Page />} />
+        <Route path="/search" element={<SearchPage />} />
 
       </Routes>
     </>

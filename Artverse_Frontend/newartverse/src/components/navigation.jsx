@@ -29,7 +29,7 @@ export const Navigation = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      window.location.href = `/search?title=${searchQuery}`;
+      window.location.href = `/search?artwork=${searchQuery}`;
     }
   };
 

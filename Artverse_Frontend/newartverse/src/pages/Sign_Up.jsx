@@ -7,7 +7,7 @@ import '../styles/Sign_Up_Page/SignUp.css';
 
 const SignUp = () => {
   return (
-    <div className="signup-container d-flex" style={{ height: '830px', position: 'relative' }}>
+    <div className="signup-container d-flex" style={{ height: 'auto', position: 'relative' }}>
       <div className="signup-left-image">
         <LeftImageSignup />
       </div>

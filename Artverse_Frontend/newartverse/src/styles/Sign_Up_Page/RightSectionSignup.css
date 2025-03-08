@@ -1,88 +1,125 @@
-/* Center the signup right section */
 .signup-right-section {
   width: 100%;
-  max-width: 400px; /* Max width for the form */
-  text-align: center; /* Center text inside */
+  max-width: 600px; /* Increased max-width */
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center content */
-  align-items: center; /* Horizontally center content */
-  margin: auto auto;
-  box-sizing: border-box; /* Ensures padding/border are included in the width/height calculation */
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
+.signup-title p {
+  font-size: 42px; /* Bigger heading */
+  font-weight: bold;
+  color: #333;
+}
 
-
-/* Make sure the form fills available space and is centered */
 .signup-form {
-  width: 100%; /* Take up full width of the container */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between fields */
 }
 
-/* Form input styles */
+.name-phone-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .signup-right-section input,
 .signup-right-section select {
-  width: calc(100% - 20px); /* Full width with padding on sides */
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  width: 100%;
+  padding: 15px; /* Bigger input fields */
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 .signup-submit-button {
-  width: calc(100% - 20px); /* Full width with padding */
-  padding: 12px;
+  width: 100%;
+  padding: 15px;
   background-color: #6c63ff;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .signup-submit-button:hover {
   background-color: #574bff;
 }
 
-/* Logo styling */
 .signup-logo {
-  width: 155px; 
+  width: 180px;
   height: auto;
-  margin: 0 auto;
-}
-
-.signup-title {
-  font-size: 32px; 
-  font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
 }
 
-/* Error message styling */
-.error-message { 
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
-}
-/* Increase the font size of form labels */
-.name-label,
-.phone-label,
-.email-label,
-.age-label,
-.gender-label,
-.password-label {
-  font-size: 18px; /* Adjust to your preferred size */
-  font-weight: bold; /* Optional: Make the label text bold */
-  color: #333; /* Ensure the label color stands out */
+.google-signup-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Other form elements remain the same, for example, input styling */
-.signup-right-section input,
-.signup-right-section select {
-  width: calc(100% - 20px); /* Full width with padding on sides */
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
   padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  background: white;
   border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
 }
-.name-input {
-  transform: translateX(-10px); /* Move 10px to the left */
+
+.google-login-button:hover {
+  background: #f8f8f8;
+}
+
+.google-logo {
+  width: 28px;
+  margin-right: 12px;
+}
+
+.google-login-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-right-section {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .signup-title p {
+    font-size: 36px;
+  }
+
+  .name-phone-wrapper {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
 }

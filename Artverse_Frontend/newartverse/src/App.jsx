@@ -18,6 +18,7 @@ import ArtistProfile from './pages/ArtistProfile.jsx';
 import Paintings_Market from './pages/Paintings_Market.jsx'
 import Specific_Painting_Page from './pages/Specific_Painting_Page.jsx'
 import SearchPage from './pages/Search_page.jsx';
+import About_Us from './pages/About_Us.js';
 const App = () => {
   return (
     <GoogleOAuthProvider clientId="868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com">
@@ -56,6 +57,11 @@ const MainContent = () => {
         <Route path="/Paintings_Market" element={<Paintings_Market />} />
         <Route path="/Painting" element={<Specific_Painting_Page />} />
         <Route path="/search" element={<SearchPage />} />
+
+        <Route path="/About_Us" element={<About_Us />} />
+
+
+        
 
       </Routes>
     </>

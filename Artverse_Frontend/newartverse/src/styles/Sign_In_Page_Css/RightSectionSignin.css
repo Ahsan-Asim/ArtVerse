@@ -3,70 +3,54 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+  padding: 20px;
+  margin: auto;
+  position: relative;
 }
 
-.logo10,.or-text
- {
-  width: 120px;
+/* Logo and Title Container */
+.logo-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adjusted Logo */
+.logo10 {
+  width: 220px; /* Increased size */
   height: auto;
+  display: block;
   margin: 0 auto;
-  position: relative;
-  bottom: 70px; /* Moves the logo 200px from its normal position */
 }
 
-.sign_div1 {
-  font-size: 28px;
+/* Adjusted Heading */
+.sign-title {
+  font-size: 32px; /* Reduced font size */
   font-weight: bold;
-  margin-bottom: 20px;
   color: #333;
+  margin-top: 10px; /* Adjusted to remove overlap */
   position: relative;
-  bottom: 70px; /* Moves the logo 200px from its normal position */
 }
 
-.google-login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 320px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.google-login-btn:hover {
-  background-color: #357ae8;
-}
-
-.signin-form1 {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
+/* Email & Password Input Fields */
 .email-input,
 .password-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
+/* Sign In Button */
 .signin-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #6c63ff;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -75,9 +59,10 @@
   background-color: #574bff;
 }
 
+/* Sign-up link */
 .signup-text {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -90,24 +75,24 @@
   text-decoration: underline;
 }
 
-/* Error message styling */
+/* Error message */
 .error-message {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
-/* Styling for form labels */
+/* Labels */
 .email-label,
 .password-label {
-  font-size: 18px; /* Increase font size for labels */
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
-  display: block; /* Ensure the label takes up a full line */
+  display: block;
 }
 
-/* Styling for "Forget?" link */
+/* Forget Password */
 .password-container {
   display: flex;
   justify-content: space-between;
@@ -118,10 +103,41 @@
   font-size: 14px;
   color: #6c63ff;
   cursor: pointer;
-  margin-left: 40px; /* Adjust the spacing to move it right by 40px */
+  margin-left: 40px;
 }
 
-/* Optional: Adjust the hover effect for forgot password */
 .forgot-password:hover {
   text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .right-section1 {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .logo10 {
+    width: 180px;
+  }
+
+  .sign-title {
+    font-size: 28px;
+    margin-top: 5px; /* Adjusted */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo10 {
+    width: 150px;
+  }
+
+  .sign-title {
+    font-size: 24px;
+    margin-top: 5px; /* Adjust overlap */
+  }
 }

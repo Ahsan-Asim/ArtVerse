@@ -2,7 +2,7 @@ import React from "react";
 
 export const Landing_Page_Forth_Section = (props) => {
   return (
-    <header id="forth-section">
+    <header id="forth-section" className="forth-section">
       <div className="forth-intro">
         <div className="overlay">
           <div className="container">

@@ -127,32 +127,33 @@ exports.googleSignin = async (req, res) => {
 // Controller to handle user 
 exports.signup = async (req, res) => {
   try {
-    const { firstName,lastName, email, phone,age,gender, password,role } = req.body;
+    let { firstName, lastName, phone, email, age, gender, password, role } = req.body;
 
-    // Check if the email or phone already exists in the database
-    const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
-    if (existingUser) {
-      return res.status(400).json({ message: 'Email or phone already in use.' });
+    // Ensure role is set to default if empty or undefined
+    if (!role || role.trim() === '') {
+      role = 'user';  // Assign default role
     }
 
-    // Create a new user
-    const user = new User({
+    const newUser = new User({
       firstName,
       lastName,
-      email,
       phone,
+      email,
       age,
       gender,
       password,
-      role, // Ideally, hash the password before saving
+      role, // Now role is always valid
     });
 
-    await user.save();
-    res.status(201).json({ message: 'User registered successfully!' });
+    await newUser.save();
+    res.status(201).json({ message: 'User registered successfully' });
+
   } catch (error) {
-    res.status(500).json({ message: 'Server error', error });
+    res.status(400).json({ message: error.message });
   }
 };
+
+
 
 
 

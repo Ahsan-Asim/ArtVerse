@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LikeIcon from "../assets/images/like_icon.png";
 import ShoppingIcon from "../assets/images/shopping_icon.png";
 
 export const Landing_Page_fifth_Section = () => {
   const [artworks, setArtworks] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchArtworks();
@@ -42,7 +43,29 @@ export const Landing_Page_fifth_Section = () => {
                 : `http://localhost:4000${art.image}`;
 
               return (
-                <div key={art._key || index} style={{ width: "30%", margin: "15px", minWidth: "250px" }}>
+                <div
+                  key={art._key || index}
+                  style={{
+                    textDecoration: "none",
+                    width: "30%",
+                    margin: "15px",
+                    minWidth: "250px",
+                    cursor: "pointer",
+                    overflow: "hidden",
+                    borderRadius: "10px",
+                    boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
+                    transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                  }}
+                  onClick={() => navigate("/signup")}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow = "0px 6px 12px rgba(0,0,0,0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "0px 4px 6px rgba(0,0,0,0.1)";
+                  }}
+                >
                   <div
                     style={{
                       backgroundImage: `url(${imageUrl})`,
@@ -50,13 +73,13 @@ export const Landing_Page_fifth_Section = () => {
                       backgroundPosition: "center",
                       width: "100%",
                       height: "300px",
-                      borderRadius: "10px",
-                      boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
                     }}
                   ></div>
 
-                  <div style={{ padding: "15px", textAlign: "left" }}>
-                    <h3 style={{ fontSize: "1.5rem", marginBottom: "5px" }}>{art.artwork || "Untitled"}</h3>
+                  <div style={{ padding: "15px", textAlign: "left", backgroundColor: "#fff" }}>
+                    <h3 style={{ fontSize: "1.5rem", marginBottom: "5px", color: "#333" }}>
+                      {art.artwork || "Untitled"}
+                    </h3>
                     <p style={{ color: "#777" }}>By {art.artist || "Unknown Artist"}</p>
                     <p style={{ fontSize: "1rem", color: "#444" }}>{art.medium || "Unknown Medium"}</p>
                     <p style={{ fontSize: "0.9rem", color: "#666" }}>Size: {art.width} x {art.height} units</p>
@@ -94,21 +117,20 @@ export const Landing_Page_fifth_Section = () => {
           )}
         </div>
 
-        <Link to="/signup">
-          <button
-            style={{
-              backgroundColor: "#000",
-              color: "#fff",
-              padding: "10px 20px",
-              fontSize: "1.2rem",
-              marginTop: "40px",
-              cursor: "pointer",
-              borderRadius: "5px",
-            }}
-          >
-            <b>Explore More</b>
-          </button>
-        </Link>
+        <button
+          onClick={() => navigate("/signup")}
+          style={{
+            backgroundColor: "#000",
+            color: "#fff",
+            padding: "10px 20px",
+            fontSize: "1.2rem",
+            marginTop: "40px",
+            cursor: "pointer",
+            borderRadius: "5px",
+          }}
+        >
+          <b>Explore More</b>
+        </button>
       </div>
     </div>
   );

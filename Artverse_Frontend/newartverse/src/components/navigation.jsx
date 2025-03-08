@@ -8,7 +8,7 @@ import "../styles/Navigation.css";
 export const Navigation = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [artistProfileImage, setArtistProfileImage] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false); // Add state for menu toggle
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const artistEmail = sessionStorage.getItem("email");
@@ -36,9 +36,7 @@ export const Navigation = () => {
   return (
     <nav id="nav-container" className="navbar navbar-default navbar-fixed-top">
       <div className="wrapper">
-        {/* Logo Section */}
         <div className="nav-header">
-          {/* Toggle Button */}
           <button
             className={`nav-toggle ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -47,18 +45,15 @@ export const Navigation = () => {
             <div className="bar"></div>
             <div className="bar"></div>
           </button>
-
           <Link to="/" className="brand-logo">
             <img src={Logo} alt="ArtVerse Logo" className="brand-image" />
           </Link>
         </div>
 
-        {/* Welcome Section */}
         <div className="welcome-section">
           <h1>Welcome to ArtVerse!</h1>
         </div>
 
-        {/* Search Section */}
         <div className="nav-row center-box">
           <form className="search-box" onSubmit={handleSearchSubmit}>
             <img src={SearchIcon} alt="Search Icon" className="search-symbol" />
@@ -75,15 +70,14 @@ export const Navigation = () => {
           </form>
         </div>
 
-        {/* Navigation Menu */}
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`} id="nav-collapse">
           <ul className="nav navbar-nav">
-            <li><a href="#about" className="page-scroll">About</a></li>
-            <li><a href="#services" className="page-scroll">Services</a></li>
-            <li><a href="#portfolio" className="page-scroll">Gallery</a></li>
-            <li><a href="#testimonials" className="page-scroll">Testimonials</a></li>
-            <li><a href="#team" className="page-scroll">Digital Art</a></li>
-            <li><a href="#contact" className="page-scroll">Explore More</a></li>
+            <li><a href="/About_Us" className="nav-item">About</a></li>
+            <li><a href="#services" className="nav-item">Services</a></li>
+            <li><a href="#portfolio" className="nav-item">Gallery</a></li>
+            <li><a href="#testimonials" className="nav-item">Testimonials</a></li>
+            <li><a href="#team" className="nav-item">Digital Art</a></li>
+            <li><a href="#contact" className="nav-item">Explore More</a></li>
             <li>
               <div className="buttons">
                 <Link to="/signin" className="login_button">Login</Link>

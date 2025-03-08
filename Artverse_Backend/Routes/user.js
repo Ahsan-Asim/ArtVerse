@@ -5,6 +5,8 @@ const router = express.Router();
 const userController = require('../Controllers/user');
 const authMiddleware = require('../middleware/authMiddleware'); // Import the auth middleware
 const User = require('../Models/user');
+const Request = require('../Models/request');
+
 
 
 
@@ -23,6 +25,8 @@ router.put('/updateArtistByEmail/:email', userController.updateArtist); // Add a
 
 router.put('/updateData/:email', userController.updateData); // Add a new PUT route for updating artist profile
 router.get('/getUserByEmail1/:email', userController.getUserByEmail1);
+router.get('/me',authMiddleware, userController.getme);
+
 
 
 
@@ -45,5 +49,35 @@ router.get('/home', authMiddleware, async (req, res) => {
   }
 });
 
+router.get("/commission-requests", async (req, res) => {
+  try {
+    const userEmail = req.query.email; // Get email from query params
+    console.log("received email",userEmail)
+    
+    if (!userEmail) {
+      return res.status(400).json({ success: false, message: "Email is required" });
+    }
+    
+    const user = await User.findOne({ email: userEmail });
+    
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    
+    const requests = await Request.find({ userId: user._id })
+      .populate("interested_people", "name email country")
+      .lean();
 
-module.exports=router
+    res.status(200).json({ success: true, requests });
+  } catch (error) {
+    console.error("Error fetching commission requests:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+
+
+
+
+
+module.exports=router;

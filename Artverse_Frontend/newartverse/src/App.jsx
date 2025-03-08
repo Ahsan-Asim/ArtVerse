@@ -10,6 +10,10 @@ import Profile from './pages/profile';
 import Service_Page from './pages/Service_Page';
 import ImageSearch from './pages/Image_search'
 import CustomizePage from './pages/customize_page.jsx';
+import Notification from './pages/Notification.jsx';
+import RequestDetails from './pages/RequestDetails.jsx';
+import Commission from './pages/CommissionRequests.jsx';
+import ArtistProfile from './pages/ArtistProfile.jsx';
 //import PaintingMarket from './pages/Painting_market.jsx'
 const App = () => {
   return (
@@ -38,6 +42,14 @@ const MainContent = () => {
         <Route path="/image_search" element={<ImageSearch />} />
         <Route path="/customize/:serviceId" element={<CustomizePage />} />
         <Route path="/services" element={<Service_Page />} />
+        <Route path="/Notification" element={<Notification />} />
+        <Route path="/Commission" element={<Commission />} />
+        <Route path="/request-details/:notificationId" element={<RequestDetails />} />
+        <Route path="/artist-details/:email" element={<ArtistProfile />} />
+        
+
+
+        
 
       </Routes>
     </>

@@ -1,74 +1,85 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Import the cors package
+const cors = require("cors");
 const path = require("path");
-const Artist = require('./Models/artist'); // Import the Artist model
-
-const { connectMongoDb } = require('./connection');
+const http = require("http");
+const Artist = require("./Models/artist");
+const socket = require("./socket");
+const { connectMongoDb } = require("./connection");
 
 const app = express();
+const server = http.createServer(app); // Create an HTTP server with Express
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001','http://localhost:3002'];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"];
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'));
+        callback(new Error("Not allowed by CORS"));
       }
     },
   })
 );
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Import user and artist routers
+// Initialize WebSockets
+const io = socket.init(server);
+
+io.on("connection", (socket) => {
+  console.log("✅ A user connected:", socket.id);
+});
+
+// Import routers
 const userRouter = require("./Routes/user");
 const artistRouter = require("./Routes/artist");
 const artworkRouter = require("./Routes/artwork");
 const adminRouter = require("./Routes/admin");
+const requestRouter = require("./Routes/request");
+const notificationRouter = require("./Routes/Notification");
 
 
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Serve static files from the 'uploads' folder
-// app.use('/uploads', express.static('uploads'));
-// Serve static files (images) from the 'uploads' folder
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Route to get artist details by email
-app.get('/api/artist/image', async (req, res) => {
-  const artistEmail = req.query.email;  // Fetch email from query string
+app.get("/api/artist/image", async (req, res) => {
+  const artistEmail = req.query.email;
 
   try {
-    const artist = await Artist.findOne({ email: artistEmail }); // Find artist by email
+    const artist = await Artist.findOne({ email: artistEmail });
     if (artist) {
       res.json({
         name: artist.name,
         email: artist.email,
-        profileImage: artist.image, // Send the profile image path
+        profileImage: artist.image,
       });
     } else {
-      res.status(404).json({ message: 'Artist not found' });
+      res.status(404).json({ message: "Artist not found" });
     }
   } catch (err) {
-    console.error('Error fetching artist data:', err);
-    res.status(500).json({ message: 'Server error' });
+    console.error("Error fetching artist data:", err);
+    res.status(500).json({ message: "Server error" });
   }
 });
 
-
 // Connect MongoDB and set up routes
-connectMongoDb('mongodb://127.0.0.1:27017/fyp');
-app.use('/api/users', userRouter);
-app.use('/api/artists', artistRouter); // Add the artist route
-app.use('/api/artwork', artworkRouter); // Add the artist route
-app.use('/api/admin', adminRouter); // Add the artist route
-const cartRoutes = require('./Routes/cart');
-app.use('/api/cart', cartRoutes);
+connectMongoDb("mongodb://127.0.0.1:27017/fyp");
 
+app.use("/api/users", userRouter);
+app.use("/api/artists", artistRouter);
+app.use("/api/artwork", artworkRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/requests", requestRouter);
+
+app.use("/api/notifications", notificationRouter);
+
+
+const cartRoutes = require("./Routes/cart");
+app.use("/api/cart", cartRoutes);
 
 const PORT = 4000;
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`🚀 Server is listening on port ${PORT}`);
 });

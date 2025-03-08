@@ -16,19 +16,40 @@ function CustomizationPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const userEmail = sessionStorage.getItem("email"); // Get email from sessionStorage
+  
+    if (!userEmail) {
+      alert("User email not found. Please log in.");
+      return;
+    }
+  
     const formData = new FormData();
-    formData.append('serviceId', serviceId);
-    formData.append('budget', budget);
-    formData.append('time', time);
-    formData.append('description', description);
-    formData.append('image', image);
-
-    await axios.post('http://localhost:5000/submit-request', {
-      serviceId, budget, time, description, image: image ? image.name : ''
-    });
-
-    alert('Request submitted successfully!');
+    formData.append("budget", budget);
+    formData.append("time", time);
+    formData.append("description", description);
+  
+    if (image) {
+      formData.append("image", image);
+    }
+  
+    try {
+      const response = await axios.post("http://localhost:4000/api/requests/submit", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "user-email": userEmail, // Ensure correct casing
+        },
+      });
+  
+      alert("Request submitted successfully!");
+      console.log("Server Response:", response.data);
+    } catch (error) {
+      console.error("Error submitting request:", error.response?.data || error.message);
+      alert("Failed to submit request. Please try again.");
+    }
   };
+  
+  
 
   return (
     <div className="customization-container">

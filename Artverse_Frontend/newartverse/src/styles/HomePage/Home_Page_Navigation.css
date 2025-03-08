@@ -197,3 +197,9 @@
 .nav-icons .icon:hover {
   transform: scale(1.1);
 }
+
+
+.notification-icon {
+  font-size: 24px; /* Adjust size as needed */
+  color: #333; /* Adjust color as needed */
+}

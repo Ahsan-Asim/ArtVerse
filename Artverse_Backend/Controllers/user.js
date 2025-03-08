@@ -471,7 +471,9 @@ exports.updateData = async (req, res) => {
 //the below give user detail without populating its artist detail:
 // Get artist profile by email
 exports.getUserByEmail1 = async (req, res) => {
-  const { userEmail } = req.params;
+  // const { userEmail } = req.params;
+  const userEmail = req.params.email || req.params.userEmail; // Check both possible names
+
 
   try {
     const user = await User.findOne({ email: userEmail });
@@ -482,5 +484,19 @@ exports.getUserByEmail1 = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error.' });
+  }
+};
+
+exports.getme = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password");
+    console.log("user idddddddd is",user);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    res.status(200).json({ success: true, user });
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };

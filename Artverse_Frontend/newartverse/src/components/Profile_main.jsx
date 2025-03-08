@@ -19,6 +19,8 @@ import {
 import { Settings, Upload, Home } from "@mui/icons-material";
 import DefaultProfileIcon from "../assets/images/default_profile.jpeg";
 import '../styles/ProfilePage/profile_main.css';
+import socket from "../socket"; // Import socket instance
+
 
 export const Profile_main = () => {
   const [userData, setUserData] = useState(null);
@@ -31,6 +33,19 @@ export const Profile_main = () => {
   const [artistProfileImage, setArtistProfileImage] = useState("");
   const [artworks, setArtworks] = useState([]);
   const navigate = useNavigate();
+
+  // const [notifications, setNotifications] = useState([]);
+
+  // useEffect(() => {
+  //   // Listen for new customization requests
+  //   socket.on("newRequest", (data) => {
+  //     setNotifications((prev) => [...prev, data]);
+  //   });
+
+  //   return () => {
+  //     socket.off("newRequest"); // Cleanup on unmount
+  //   };
+  // }, []);
 
   useEffect(() => {
     const artistEmail = sessionStorage.getItem("email"); // Fetch email from sessionStorage
@@ -367,6 +382,7 @@ export const Profile_main = () => {
     </Grid>
   ))}
 </Grid>
+
 
 
 

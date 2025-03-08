@@ -161,6 +161,7 @@ export const NavigationBar = () => {
   const [notifications, setNotifications] = useState([]);
   const [notificationCount, setNotificationCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
   const role = sessionStorage.getItem("role");
@@ -168,9 +169,10 @@ export const NavigationBar = () => {
 
   useEffect(() => {
     if (token) {
-      let apiUrl = role === "artist" 
-        ? "http://localhost:4000/api/artists/me" 
-        : "http://localhost:4000/api/users/me";
+      let apiUrl =
+        role === "artist"
+          ? "http://localhost:4000/api/artists/me"
+          : "http://localhost:4000/api/users/me";
 
       fetch(apiUrl, {
         headers: { Authorization: `Bearer ${token}` },
@@ -184,9 +186,10 @@ export const NavigationBar = () => {
         })
         .catch((err) => console.error("Error fetching profile data:", err));
 
-      let notificationApi = role === "artist" 
-        ? "http://localhost:4000/api/notifications/artist-not" 
-        : "http://localhost:4000/api/notifications/user-not";
+      let notificationApi =
+        role === "artist"
+          ? "http://localhost:4000/api/notifications/artist-not"
+          : "http://localhost:4000/api/notifications/user-not";
 
       fetch(notificationApi, {
         headers: { Authorization: `Bearer ${token}` },
@@ -195,7 +198,9 @@ export const NavigationBar = () => {
         .then((data) => {
           if (data.success) {
             setNotifications(data.notifications);
-            setNotificationCount(data.notifications.filter((n) => !n.isRead).length);
+            setNotificationCount(
+              data.notifications.filter((n) => !n.isRead).length
+            );
           }
         })
         .catch((err) => console.error("Error fetching notifications:", err));
@@ -220,11 +225,21 @@ export const NavigationBar = () => {
     }
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/search?artwork=${searchQuery}`;
+    }
+  };
+
   return (
     <nav className="navbar navbar-default navbar-fixed-top">
       <div className="wrapper">
         <div className="nav-header">
-          <button className={`nav-toggle ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className={`nav-toggle ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
@@ -233,14 +248,19 @@ export const NavigationBar = () => {
           <Link to="/" className="brand-logo">
             <img src={Logo} alt="ArtVerse Logo" className="brand-image" />
           </Link>
+
           {/* Icons Section (Like, Cart & Profile) */}
-        <div className="nav-icons">
-          <Link to="/favorites">
-            <img src={LikeIcon} alt="Like Icon" className="icon like-icon" />
-          </Link>
-          <Link to="/cart">
-            <img src={ShoppingIcon} alt="Shopping Icon" className="icon cart-icon" />
-          </Link>
+          <div className="nav-icons">
+            <Link to="/favorites">
+              <img src={LikeIcon} alt="Like Icon" className="icon like-icon" />
+            </Link>
+            <Link to="/cart">
+              <img
+                src={ShoppingIcon}
+                alt="Shopping Icon"
+                className="icon cart-icon"
+              />
+            </Link>
 
             <div className="notification-wrapper">
               <FontAwesomeIcon
@@ -254,8 +274,10 @@ export const NavigationBar = () => {
                   }
                 }}
               />
-              {notificationCount > 0 && <span className="notification-badge">{notificationCount}</span>}
-              
+              {notificationCount > 0 && (
+                <span className="notification-badge">{notificationCount}</span>
+              )}
+
               {showNotifications && role !== "user" && (
                 <div className="notification-dropdown">
                   <h4>Notifications</h4>
@@ -265,7 +287,9 @@ export const NavigationBar = () => {
                     <ul>
                       {notifications.map((notification, index) => (
                         <li key={index} className="notification-item">
-                          <Link to={`/request-details/${notification._id}`}>{notification.message}</Link>
+                          <Link to={`/request-details/${notification._id}`}>
+                            {notification.message}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -275,71 +299,13 @@ export const NavigationBar = () => {
             </div>
 
             <Link to="/profile">
-              <img src={profileImage} alt="Profile Icon" className="icon profile-icon" />
+              <img
+                src={profileImage}
+                alt="Profile Icon"
+                className="icon profile-icon"
+              />
             </Link>
-        </div>
-        </div>
-
-        {/* Navigation Menu */}
-        <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
-          <ul className="nav-list">
-            <li>
-              <Link to="/become-artist" className="nav-item">
-                Become Artist
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="nav-item">
-                Why Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/paintings" className="nav-item">
-                Paintings
-              </Link>
-            </li>
-            <li>
-              <Link to="/sculptures" className="nav-item">
-                Sculptures
-              </Link>
-            </li>
-            <li>
-              <Link to="/photography" className="nav-item">
-                Photography
-              </Link>
-            </li>
-          </ul>
           </div>
-
-        {/* Navigation Menu */}
-        <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
-          <ul className="nav-list">
-            <li>
-              <Link to="/become-artist" className="nav-item">
-                Become Artist
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="nav-item">
-                Why Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/paintings" className="nav-item">
-                Paintings
-              </Link>
-            </li>
-            <li>
-              <Link to="/sculptures" className="nav-item">
-                Sculptures
-              </Link>
-            </li>
-            <li>
-              <Link to="/photography" className="nav-item">
-                Photography
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
     </nav>

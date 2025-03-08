@@ -1,0 +1,8 @@
+.specific_page{
+  height: auto;
+  border-radius: 30px;
+  background: rgba(255, 253, 244, 1);
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+  margin: 0px auto; /*Center the component horizontally*/
+
+}

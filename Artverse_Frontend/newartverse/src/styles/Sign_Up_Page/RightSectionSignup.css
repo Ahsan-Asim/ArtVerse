@@ -83,3 +83,6 @@
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+.name-input {
+  transform: translateX(-10px); /* Move 10px to the left */
+}

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import "../styles/CommissionRequest.css";
 
 const CommissionRequests = () => {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const navigate = useNavigate(); // Use navigate for redirection
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchRequests = async () => {
@@ -32,78 +33,121 @@ const CommissionRequests = () => {
   }, []);
 
   const handleArtistClick = (email) => {
-    navigate(`/artist-details/${email}`); // Navigate to the artist details page
+    navigate(`/artist-details/${email}`);
   };
 
-  if (loading)
-    return <p className="text-center text-gray-600 text-lg">Loading...</p>;
-  if (error)
-    return <p className="text-center text-red-500 text-lg">{error}</p>;
+  const handleDeleteArtist = async (requestId, artistId) => {
+    try {
+      await axios.delete(`http://localhost:4000/api/requests/${requestId}/remove-artist/${artistId}`);
+
+      // Update the UI after deletion
+      setRequests((prevRequests) =>
+        prevRequests.map((request) =>
+          request._id === requestId
+            ? { ...request, interested_people: request.interested_people.filter((artist) => artist._id !== artistId) }
+            : request
+        )
+      );
+    } catch (err) {
+      console.error("Error removing artist:", err);
+    }
+  };
+
+  if (loading) return <p className="loading-text">Loading...</p>;
+  if (error) return <p className="error-text">{error}</p>;
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Commission Work</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {requests.length === 0 ? (
-          <p className="text-gray-600 text-center col-span-3">No commission requests found.</p>
-        ) : (
-          requests.map((request, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            >
-              <p className="text-lg font-medium text-gray-800 mb-2">
-                <strong>Description:</strong> {request.description}
-              </p>
-              <p className="text-gray-700 mb-1">
-                <strong>Budget:</strong> ${request.budget}
-              </p>
-              <p className="text-gray-700 mb-4">
-                <strong>Timeframe:</strong> {request.time}
-              </p>
-              <button
-                onClick={() =>
-                  setOpenDropdown(openDropdown === index ? null : index)
-                }
-                className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
-              >
-                {openDropdown === index
-                  ? "Hide Interested Artists"
-                  : "Show Interested Artists"}
-              </button>
-              <AnimatePresence>
-                {openDropdown === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 bg-white shadow-md rounded-md p-4"
-                  >
-                    {request.interested_people.length > 0 ? (
-                      request.interested_people.map((artist) => (
-                        <div
-                          key={artist._id}
-                          onClick={() => handleArtistClick(artist.email)}
-                          className="p-3 border-b border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200"
+    <div className="container">
+      <h2>🎨 Commission Work</h2>
+
+      <div className="table-container">
+        <table className="responsive-table">
+          <thead>
+            <tr>
+              <th>Work</th>
+              <th>Budget</th>
+              <th>Timeframe</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {requests.length === 0 ? (
+              <tr>
+                <td colSpan="5" className="no-data">No commission requests found.</td>
+              </tr>
+            ) : (
+              requests.map((request, index) => (
+                <React.Fragment key={index}>
+                  <tr className="table-row">
+                    <td data-label="Work">Work {index + 1}</td>
+                    <td data-label="Budget" className="budget">${request.budget}</td>
+                    <td data-label="Timeframe">{request.time}</td>
+                    <td data-label="Description">{request.description}</td>
+                    <td data-label="Action">
+                      <button
+                        onClick={() => setOpenDropdown(openDropdown === index ? null : index)}
+                        className="action-button"
+                      >
+                        {openDropdown === index ? "Hide Artists" : "Show Artists"}
+                      </button>
+                    </td>
+                  </tr>
+
+                  {openDropdown === index && (
+                    <tr>
+                      <td colSpan="5">
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="dropdown-container"
                         >
-                          <p className="text-gray-800 font-semibold">
-                            {artist.name}
-                          </p>
-                          <p className="text-gray-600 text-sm">{artist.email}</p>
-                          <p className="text-gray-600 text-sm">
-                            <strong>Country:</strong> {artist.country}
-                          </p>
-                        </div>
-                      ))
-                    ) : (
-                      <p className="text-gray-600">No interested artists yet.</p>
-                    )}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))
-        )}
+                          {request.interested_people.length > 0 ? (
+                            <table className="artist-table">
+                              <thead>
+                                <tr>
+                                  <th>Artist Name</th>
+                                  <th>Email</th>
+                                  <th>Country</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {request.interested_people.map((artist) => (
+                                  <tr key={artist._id} className="artist-row">
+                                    <td>{artist.name}</td>
+                                    <td>{artist.email}</td>
+                                    <td>{artist.country}</td>
+                                    <td>
+                                      <button
+                                        className="confirm-button"
+                                      >
+                                        ✅ Confirm
+                                      </button>
+                                      <button
+                                        className="delete-button"
+                                        onClick={() => handleDeleteArtist(request._id, artist._id)}
+                                      >
+                                        ❌ Delete
+                                      </button>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          ) : (
+                            <p className="no-artists">No interested artists yet.</p>
+                          )}
+                        </motion.div>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              ))
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

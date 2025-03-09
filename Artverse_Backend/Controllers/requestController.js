@@ -108,3 +108,27 @@ exports.updateRequestStatus = async (req, res) => {
     res.status(500).json({ success: false, message: 'Error updating status', error });
   }
 };
+
+
+// Remove an artist from the interested_people list
+exports.delete = async (req, res) => {
+  try {
+    const { requestId, artistId } = req.params;
+
+    const request = await Request.findById(requestId);
+    if (!request) {
+      return res.status(404).json({ message: "Request not found" });
+    }
+
+    // Remove the artist from the interested_people array
+    request.interested_people = request.interested_people.filter(
+      (id) => id.toString() !== artistId
+    );
+
+    await request.save();
+
+    res.status(200).json({ message: "Artist removed successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error removing artist", error });
+  }
+};

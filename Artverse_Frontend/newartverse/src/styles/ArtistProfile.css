@@ -1,0 +1,118 @@
+/* ArtistProfile.css */
+.artist-profile-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Artist Info Section */
+.artist-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.artist-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ddd;
+}
+
+.artist-details {
+  flex: 1;
+}
+
+.artist-details h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.artist-details p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Artist Additional Info */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.additional-info p {
+  font-size: 16px;
+  color: #444;
+}
+
+.additional-info strong {
+  color: #222;
+}
+
+/* Artworks Section */
+.artworks-container {
+  margin-top: 30px;
+}
+
+.artworks-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Grid for Artworks */
+.artwork-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Individual Artwork */
+.artwork-card {
+  width: 90%;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.artwork-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.artwork-details {
+  margin-top: 10px;
+}
+
+.artwork-details h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.artwork-details p {
+  font-size: 16px;
+  color: #555;
+}
+
+.artwork-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 5px;
+}

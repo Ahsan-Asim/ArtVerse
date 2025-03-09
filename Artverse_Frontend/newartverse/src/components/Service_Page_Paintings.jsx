@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/ServicePage//Service_Page_Paintings.css';
+import '../styles/ServicePage/Service_Page_Paintings.css';
 
 function Service_Page_Paintings() {
   const navigate = useNavigate();
@@ -70,6 +70,7 @@ function Service_Page_Paintings() {
 
   return (
     <div className="service-container">
+      <h2 className="service-heading">Our Services</h2>
       <div className="art-cards-container">
         {services.map((service, index) => (
           <div
@@ -91,7 +92,6 @@ function Service_Page_Paintings() {
           </div>
         ))}
       </div>
-      <button className='load-more'><b>Load More</b></button>
       <hr className='service-line' />
     </div>
   );

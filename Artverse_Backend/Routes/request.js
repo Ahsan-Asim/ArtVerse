@@ -59,6 +59,7 @@ router.post("/submit", upload.single("image"), requestController.submitRequest);
 
 router.get('/all', requestController.getRequests);
 router.post('/update/:id', requestController.updateRequestStatus);
+router.delete('/:requestId/remove-artist/:artistId',requestController.delete);
 
 router.post("/:requestId/interested", async (req, res) => {
   try {

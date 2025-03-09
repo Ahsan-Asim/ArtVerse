@@ -1,154 +1,124 @@
-.service_head {
+.review-container {
   text-align: center;
-  font-family: 'Aleo', sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: 7px;
-  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
-  margin: 40px auto;
+  padding: 60px 10%;
+  background-color: #f8f9fa;
 }
 
-/* Main Container */
-.profile-container {
-  max-width: 90%;
-  width: 1181px;
-  height: auto;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: #fff;
-}
-
-/* Profile Image */
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
-  object-fit: cover;
-}
-
-/* Right-side Content */
-.profile-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Name */
-.profile-name {
-  font-size: 24px;
-  font-weight: bold;
+.review-container h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
   color: #333;
 }
 
-/* Location */
-.profile-location {
-  font-size: 18px;
-  color: #555;
+.review-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Verification and Actions */
-.verification-container {
+.review-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 30px;
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%;
 }
 
-/* Verified Icon */
-.verified-icon {
-  width: 14px;
-  height: 10px;
+.review-box:hover {
+  transform: scale(1.03);
 }
 
-/* Buttons */
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.review-box img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ddd;
 }
 
-.button {
-  padding: 8px 16px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+.review-content {
+  text-align: left;
+  flex: 1;
 }
 
-.button:hover {
-  background-color: #0056b3;
+.review-box h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.review-box h3 {
+  font-size: 1.3rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.review-box p {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .profile-container {
+@media screen and (max-width: 768px) {
+  .review-box {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    padding: 30px;
   }
 
-  .profile-content {
-    align-items: center;
-  }
-
-  .button-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .service_head {
-    font-size: 24px;
-    letter-spacing: 5px;
-  }
-
-  .profile-image {
+  .review-box img {
     width: 120px;
     height: 120px;
   }
 
-  .profile-name {
-    font-size: 20px;
+  .review-box h2 {
+    font-size: 1.8rem;
   }
 
-  .profile-location {
-    font-size: 16px;
+  .review-box h3 {
+    font-size: 1.2rem;
   }
 
-  .button {
-    padding: 6px 12px;
-    font-size: 14px;
+  .review-box p {
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .profile-container {
-    padding: 15px;
+@media screen and (max-width: 480px) {
+  .review-container {
+    padding: 40px 5%;
   }
 
-  .profile-image {
+  .review-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .review-box {
+    padding: 25px;
+  }
+
+  .review-box img {
     width: 100px;
     height: 100px;
   }
 
-  .profile-name {
-    font-size: 18px;
+  .review-box h2 {
+    font-size: 1.6rem;
   }
 
-  .profile-location {
-    font-size: 14px;
+  .review-box h3 {
+    font-size: 1.1rem;
   }
 
-  .button {
-    font-size: 12px;
-    padding: 5px 10px;
+  .review-box p {
+    font-size: 1rem;
   }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "../styles/ArtistProfile.css"; // Import CSS
 
 const ArtistProfile = () => {
   const { email } = useParams();
@@ -24,29 +25,27 @@ const ArtistProfile = () => {
     fetchArtist();
   }, [email]);
 
-  if (loading) return <p className="text-center text-gray-600 text-lg">Loading artist details...</p>;
-  if (error) return <p className="text-center text-red-500 text-lg">{error}</p>;
+  if (loading) return <p className="text-center">Loading artist details...</p>;
+  if (error) return <p className="text-center error-text">{error}</p>;
 
   return (
-    <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="artist-profile-container">
       {/* Artist Info */}
-      <div className="flex items-center space-x-6">
+      <div className="artist-info">
         <img
           src={`http://localhost:4000${artist.image}` || "https://via.placeholder.com/150"}
           alt={artist.name}
-          className="w-40 h-40 rounded-full border-4 border-gray-300 object-cover"
+          className="artist-image"
         />
-        <div>
-          <h2 className="text-3xl font-bold text-gray-800">{artist.firstName} {artist.lastName}</h2>
-          <p className="text-gray-600 text-lg">{artist.email}</p>
-          <p className="text-gray-600 text-lg">
-            {artist.artistDetails?.city}, {artist.artistDetails?.state}, {artist.artistDetails?.country}
-          </p>
+        <div className="artist-details">
+          <h2>{artist.firstName} {artist.lastName}</h2>
+          <p>{artist.email}</p>
+          <p>{artist.artistDetails?.city}, {artist.artistDetails?.state}, {artist.artistDetails?.country}</p>
         </div>
       </div>
 
       {/* Additional Info */}
-      <div className="mt-6 space-y-4 text-lg text-gray-800">
+      <div className="additional-info">
         <p><strong>About:</strong> {artist.artistDetails?.about || "No details available"}</p>
         <p><strong>Education:</strong> {artist.artistDetails?.education || "Not specified"}</p>
         <p><strong>Awards:</strong> {artist.artistDetails?.awards || "No awards listed"}</p>
@@ -55,24 +54,23 @@ const ArtistProfile = () => {
       </div>
 
       {/* Artworks */}
-      <div className="mt-8">
-        <h3 className="text-2xl font-semibold text-gray-800">Artworks</h3>
+      <div className="artworks-container">
+        <h3>Artworks</h3>
         {artist.artworks.length === 0 ? (
-          <p className="text-gray-500">No artworks available</p>
+          <p>No artworks available</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+          <div className="artwork-grid">
             {artist.artworks.map((artwork) => (
-              <div key={artwork._id} className="bg-gray-100 p-4 rounded-lg shadow-lg">
+              <div key={artwork._id} className="artwork-card">
                 <img
                   src={`http://localhost:4000${artwork.image}`}
                   alt={artwork.artwork}
-                  className="w-full h-56 object-cover rounded-lg"
                 />
-                <div className="mt-3">
-                  <h4 className="text-lg font-bold text-gray-800">{artwork.artwork}</h4>
-                  <p className="text-gray-600">{artwork.type} - {artwork.medium}</p>
-                  <p className="text-gray-500 text-sm">Created on: {artwork.date}</p>
-                  <p className="text-green-600 font-semibold">${artwork.price}</p>
+                <div className="artwork-details">
+                  <h4>{artwork.artwork}</h4>
+                  <p>{artwork.type} - {artwork.medium}</p>
+                  <p>Created on: {artwork.date}</p>
+                  <p className="artwork-price">${artwork.price}</p>
                 </div>
               </div>
             ))}

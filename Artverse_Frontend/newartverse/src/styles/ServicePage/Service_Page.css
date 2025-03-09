@@ -1,37 +1,36 @@
 .Service_Page {
-  width: 90%; /* Use percentage for responsiveness */
-  max-width: 1350px; /* Limit maximum width */
-  height: auto; /* Allow height to adjust based on content */
+  width: 90%;
+  max-width: 1350px;
+  height: auto;
   position: relative;
-  border: 5px solid black;
-  border-radius: 30px; /* Shortened border-radius */
+  /* border: 5px solid black; */
+  /* border-radius: 30px; */
   background: rgba(255, 253, 244, 1);
   box-sizing: border-box;
-  margin: 20px auto; /* Add some margin for spacing */
+  margin: 80px auto 20px; /* Push content down to avoid overlap with fixed navbar */
   overflow: hidden;
-  padding: 20px; /* Add padding to prevent content from sticking to edges */
+  padding: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .Service_Page {
-      width: 95%; /* Slightly increase width for medium screens */
-      padding: 15px;
-  }
+/* Ensure the main component takes full screen */
+.Service_Page_Main {
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
 }
 
+/* Adjust for smaller screens */
 @media (max-width: 768px) {
   .Service_Page {
-      width: 98%; /* Take full width on smaller devices */
-      border-width: 3px; /* Reduce border thickness */
-      padding: 10px;
+    width: 98%;
+    margin-top: 100px; /* Increase margin to prevent overlap */
   }
-}
 
-@media (max-width: 480px) {
-  .Service_Page {
-      width: 100%;
-      border-width: 2px;
-      padding: 5px;
+  .Service_Page_Main {
+    height: auto; /* Allow content to adjust */
   }
 }

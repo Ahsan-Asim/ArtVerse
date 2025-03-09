@@ -92,7 +92,7 @@ const RequestDetails = () => {
       <h2 className="request-title">Request Details</h2>
 
       {request?.image && (
-        <div className="image-container">
+        <div className="image-wrapper">
           <img src={`data:image/jpeg;base64,${request.image}`} alt="Uploaded Request" className="request-image" />
           <button className="download-button" onClick={handleDownloadImage}>Download Image</button>
         </div>
@@ -100,8 +100,8 @@ const RequestDetails = () => {
 
       <div className="details-container">
         {user ? (
-          <div className="user-card">
-            <h3 className="section-title">User Information</h3>
+          <div className="info-card user-card">
+            <h3>User Information</h3>
             <p><strong>Name:</strong> {user.name} {user.lastName}</p>
             <p><strong>Role:</strong> {user.role}</p>
             <p><strong>Email:</strong> {user.email}</p>
@@ -111,8 +111,8 @@ const RequestDetails = () => {
         ) : <p className="error-message">User information not available.</p>}
 
         {request ? (
-          <div className="request-card">
-            <h3 className="section-title">Request Information</h3>
+          <div className="info-card request-card">
+            <h3>Request Information</h3>
             <p><strong>Budget:</strong> {request.budget}</p>
             <p><strong>Time:</strong> {request.time}</p>
             <p><strong>Description:</strong> {request.description}</p>

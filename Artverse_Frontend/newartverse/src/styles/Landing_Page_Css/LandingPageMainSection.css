@@ -1,0 +1,13 @@
+#about {
+  margin: 0 !important; /* Remove any margin */
+  padding: 0 !important; /* Remove any padding */
+}
+
+.landing-page-container {
+  padding: 0 !important; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the container */
+}
+
+.row {
+  margin: 0 !important; /* Override Bootstrap row margins */
+}

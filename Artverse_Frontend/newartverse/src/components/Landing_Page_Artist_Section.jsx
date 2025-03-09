@@ -25,37 +25,43 @@ export const Landing_Page_Artist_Section = (props) => {
     return `http://localhost:4000/${imagePath.replace(/\\/g, "/")}`;
   };
 
-  return (
-    <div id="artists" className="text-center">
-      <div className="container">
-        <div className="col-md-8 col-md-offset-2 section-title">
-          <h2>Meet Our Artists</h2>
-          <p>Discover the talent and creativity of our artists.</p>
-        </div>
-        <div id="row">
-          {artists.map((artist, index) => (
-            <div key={index} className="col-md-3 col-sm-6 artist">
-              <div className="thumbnail">
-                <img
-                  src={getArtistImageUrl(artist.artistDetails?.image)}
-                  alt={artist.artistDetails?.name || "Artist"}
-                  className="team-img"
-                />
-                <div className="caption">
-                  <h4>{artist.artistDetails?.name}</h4>
-                  <p>{artist.artistDetails?.country}</p>
-                  <button
-                    className="follow-button"
-                    onClick={() => navigate("/signup")}
-                  >
-                    Follow Artist
-                  </button>
-                </div>
+ return (
+  <div
+    id="artists"
+    className="text-center"
+    style={{ backgroundColor: "white", margin: "0", padding: "0" }}
+  >
+    <div className="container">
+      <div className="col-md-8 col-md-offset-2 section-title">
+        <h2>Meet Our Artists</h2>
+        <p>Discover the talent and creativity of our artists.</p>
+      </div>
+      <div id="row">
+        {artists.map((artist, index) => (
+          <div key={index} className="col-md-3 col-sm-6 artist">
+            <div className="thumbnail">
+              <img
+                src={getArtistImageUrl(artist.artistDetails?.image)}
+                alt={artist.artistDetails?.name || "Artist"}
+                className="team-img"
+              />
+              <div className="caption">
+                <h4>{artist.artistDetails?.name}</h4>
+                <p>{artist.artistDetails?.country}</p>
+                <button
+                  className="follow-button"
+                  onClick={() => navigate("/signup")}
+                >
+                  Follow Artist
+                </button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
-  );
+  </div>
+);
+
+
 };

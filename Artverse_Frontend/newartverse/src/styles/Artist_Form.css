@@ -1,0 +1,141 @@
+
+
+/* Container */
+.become-artist-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;  /* Changed to white */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(227, 219, 219, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+
+/* Logo and Header */
+.logo-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo1 {
+  width: 150px;
+  height: auto;
+}
+
+/* Form Styling */
+.artist-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row Styling */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping for smaller screens */
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px; /* Ensures proper spacing on smaller screens */
+}
+
+label {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 3px solid rgba(135, 130, 130, 1);
+  border-radius: 15px;
+  background: linear-gradient(90deg, #FFFDF4 65.5%, #998486 100%);
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.4);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  width: 100%; /* Makes input fields full width on small screens */
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 5px rgba(198, 161, 110, 0.7);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Register Button */
+.register-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.register-button {
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1em;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.register-button:hover {
+  background-color: #0f0f0f;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .become-artist-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .logo1 {
+    width: 120px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .become-artist-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .register-button {
+    width: 100%;
+  }
+
+  .logo1 {
+    width: 100px;
+  }
+}

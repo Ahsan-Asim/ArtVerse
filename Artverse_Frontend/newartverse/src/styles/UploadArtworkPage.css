@@ -1,0 +1,158 @@
+/* UploadArtworkPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+
+.upload-artwork-page {
+  font-family: 'Aleo', serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fdfbf5;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #0c0c0c;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.upload-primary-photo-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5eae3;
+  border: 2px dashed #b8a7a1;
+  border-radius: 12px;
+}
+
+.upload-primary-photo-container input[type="file"] {
+  display: none;
+}
+
+.upload-primary-photo-label {
+  font-family: 'Aleo', serif;
+  font-size: 16px;
+  color: #6e5e56;
+  text-align: center;
+  cursor: pointer;
+}
+
+.text-input,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.dimensions-section {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.save-button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.save-button:hover {
+  background-color: #333;
+}
+
+/* ---- RESPONSIVE DESIGN ---- */
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-primary-photo-container {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media screen and (max-width: 768px) {
+  .upload-artwork-page {
+    padding: 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .text-input,
+  .textarea {
+    width: 100%;
+    margin: 0;
+  }
+
+  .save-button {
+    width: 100%;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+  .upload-artwork-page {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .upload-primary-photo-container {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .text-input,
+  .textarea {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .save-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

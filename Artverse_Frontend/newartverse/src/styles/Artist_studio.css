@@ -1,0 +1,30 @@
+
+.artist-studio{
+  width: 1224px;
+  height: 1200px;
+  position: relative;
+  border-radius: 30px;
+  /* background: rgba(255, 253, 244, 1); */
+  background: black;
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+  margin: 0px auto; /*Center the component horizontally*/
+}
+/* Responsive Design */
+@media (max-width: 1224px) {
+  .artist-studio {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-studio {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-studio {
+    border-radius: 10px;
+  }
+}

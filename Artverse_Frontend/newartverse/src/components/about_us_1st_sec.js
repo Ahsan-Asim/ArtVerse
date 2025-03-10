@@ -16,7 +16,9 @@ function About_us_1st_sec() {
         </div>
         <div className="right-section">
           <header>OUR MISSION</header>
-          <p>At Artverse, our mission is to bridge the gap between artists and art enthusiasts by creating a vibrant, accessible platform where creativity thrives. We empower artists to showcase their work, connect with an engaged community, and bring unique, meaningful art to the world. Through innovative tools and a supportive environment, we aim to make art more discoverable, collectible, and appreciated globally.</p>
+          <p>
+            At Artverse, our mission is to bridge the gap between artists and art enthusiasts by creating a vibrant, accessible platform where creativity thrives.
+          </p>
         </div>
       </div>
     </div>

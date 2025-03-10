@@ -1,53 +1,119 @@
+/* General Styles */
 .container {
   display: flex;
   flex-direction: column;
-  height: 1100px; 
   width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
+/* Top Section - About Us Heading */
 .top-section {
   position: relative;
-  flex: 2; 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: pink;
-  width: 100%;
-  min-height: 733px;
+  padding: 80px 20px;
+  text-align: center;
 }
 
+/* Decorative Image */
 .image-bottom {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 477px;
-  height: 178.5px;
+  right: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
+/* Bottom Section - Mission & Image */
 .bottom-section {
-  flex: 1; 
   display: flex;
-  background-color: white; 
-  min-height: 367px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 50px 20px;
+  gap: 20px;
 }
 
-.left-section, .right-section {
-  flex: 1;
-  padding: 20px;
-}
-
+/* Left Section - Image */
 .left-section img {
-  width: 603px; 
-  height: 300px; 
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Right Section - Text */
+.right-section {
+  max-width: 500px;
+  text-align: left;
 }
 
 .right-section header {
-  font-size: 1.5rem;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .right-section p {
+  font-size: 16px;
   line-height: 1.6;
-  width: 100%;
+  color: #555;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 1024px) {
+  .bottom-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .right-section {
+    max-width: 100%;
+  }
+  
+  .left-section img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-section {
+    padding: 60px 15px;
+  }
+
+  .bottom-section {
+    padding: 40px 15px;
+  }
+
+  .right-section header {
+    font-size: 24px;
+  }
+
+  .right-section p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-section h1 {
+    font-size: 24px;
+  }
+
+  .image-bottom {
+    display: none; /* Hide image for very small screens */
+  }
+
+  .right-section header {
+    font-size: 20px;
+  }
+
+  .right-section p {
+    font-size: 13px;
+  }
 }

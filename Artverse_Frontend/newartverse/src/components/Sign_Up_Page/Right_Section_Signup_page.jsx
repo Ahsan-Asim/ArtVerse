@@ -9,7 +9,7 @@ import GoogleLogo from '../../assets/images/Google.png';
 function Right_Section_Signup_page() {
    const navigate = useNavigate();
    const [formData, setFormData] = useState({
-      firstName: '', lastName: '', email: '', phone: '', role:'', age:'', gender:'', password:'',
+      firstName: '', lastName: '', email: '', phone: '', role: '', age: '', gender: '', password: '',
    });
    const [message, setMessage] = useState('');
 
@@ -45,34 +45,21 @@ function Right_Section_Signup_page() {
          <div className="signup-title"><p>Sign Up to ArtVerse</p></div>
 
          <form className="signup-form" onSubmit={handleSubmit}>
-            <div className="name-phone-wrapper">
-               <div className="form-group">
+            {/* First Name & Last Name */}
+            <div className="form-row">
+               <div className="form-group equal-width">
                   <label>First Name</label>
                   <input type='text' name="firstName" value={formData.firstName} onChange={handleChange} required />
                </div>
-               <div className="form-group">
+               <div className="form-group equal-width">
                   <label>Last Name</label>
                   <input type='text' name="lastName" value={formData.lastName} onChange={handleChange} required />
                </div>
             </div>
 
-            <div className="name-phone-wrapper">
-               <div className="form-group">
-                  <label>Phone</label>
-                  <input type='text' name="phone" value={formData.phone} onChange={handleChange} required />
-               </div>
-               <div className="form-group">
-                  <label>Email</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-               </div>
-            </div>
-
-            <div className="name-phone-wrapper">
-               <div className="form-group">
-                  <label>Age</label>
-                  <input type="number" name="age" value={formData.age} onChange={handleChange} required />
-               </div>
-               <div className="form-group">
+            {/* Phone & Age */}
+            <div className="form-row">
+               <div className="form-group equal-width">
                   <label>Gender</label>
                   <select name="gender" value={formData.gender} onChange={handleChange} required>
                      <option value="">Select Gender</option>
@@ -81,11 +68,33 @@ function Right_Section_Signup_page() {
                      <option value="other">Other</option>
                   </select>
                </div>
+               <div className="form-group equal-width">
+                  <label>Age</label>
+                  <input type="number" name="age" value={formData.age} onChange={handleChange} required />
+               </div>
             </div>
 
-            <div className="form-group">
-               <label>Password</label>
-               <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+            <div className="form-row">
+            <div className="form-group full-width input">
+                  <label>Phone</label>
+                  <input type='text' name="phone" value={formData.phone} onChange={handleChange} required />
+               </div>
+            </div>
+
+            {/* Email (Full Width) */}
+            <div className="form-row">
+               <div className="form-group full-width">
+                  <label>Email</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+               </div>
+            </div>
+
+            {/* Password (Full Width) */}
+            <div className="form-row">
+               <div className="form-group full-width">
+                  <label>Password</label>
+                  <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+               </div>
             </div>
 
             <button type="submit" className="signup-submit-button">Create Account</button>
@@ -94,10 +103,7 @@ function Right_Section_Signup_page() {
          {message && <p className="signup-message">{message}</p>}
 
          <div className="google-signup-wrapper">
-            <GoogleLogin
-               onSuccess={handleGoogleLogin}
-               onError={() => setMessage('Google login failed')}
-            />
+            <GoogleLogin onSuccess={handleGoogleLogin} onError={() => setMessage('Google login failed')} />
          </div>
 
          <div className="signup-footer">

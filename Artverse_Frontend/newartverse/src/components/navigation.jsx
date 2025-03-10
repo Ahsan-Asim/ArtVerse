@@ -77,7 +77,7 @@ export const Navigation = () => {
             <li><a href="#portfolio" className="nav-item">Gallery</a></li>
             <li><a href="#testimonials" className="nav-item">Testimonials</a></li>
             <li><a href="#team" className="nav-item">Digital Art</a></li>
-            <li><a href="#contact" className="nav-item">Explore More</a></li>
+            <li><a href="/Paintings_Market" className="nav-item">Explore More</a></li>
             <li>
               <div className="buttons">
                 <Link to="/signin" className="login_button">Login</Link>

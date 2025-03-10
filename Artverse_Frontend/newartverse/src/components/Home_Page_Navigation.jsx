@@ -162,13 +162,13 @@ export const NavigationBar = () => {
               )}
             </div>
 
-            <Link to="/profile">
-              <img
-                src={profileImage}
-                alt="Profile Icon"
-                className="icon profile-icon"
-              />
-            </Link>
+            <div className="profile-section">
+  <Link to="/profile" className="profile-link">
+    <img src={profileImage} alt="Profile Icon" className="icon profile-icon" />
+  </Link>
+  {token && <span className="logged-in-text">Logged In</span>}
+</div>
+
           </div>
         </div>
       </div>

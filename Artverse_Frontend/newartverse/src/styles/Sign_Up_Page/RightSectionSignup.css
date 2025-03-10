@@ -1,150 +1,95 @@
+/* Center the signup right section */
 .signup-right-section {
   width: 100%;
-  max-width: 600px; /* Increased max-width */
-  text-align: center;
+  max-width: 400px; /* Max width for the form */
+  text-align: center; /* Center text inside */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  background: linear-gradient(135deg, #f3f3f3, #e0e0e0); /* Apply the same gradient */
-  box-sizing: border-box;
-  padding: 20px;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  margin: auto auto;
+  box-sizing: border-box; /* Ensures padding/border are included in the width/height calculation */
 }
 
-.signup-title p {
-  font-size: 42px; /* Bigger heading */
-  font-weight: bold;
-  color: #333;
-}
 
+
+/* Make sure the form fills available space and is centered */
 .signup-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Add spacing between fields */
+  width: 100%; /* Take up full width of the container */
 }
 
-/* Updated Field Wrappers */
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+/* Form input styles */
+.signup-right-section input {
+  width: calc(100% - 20px); /* Full width with padding on sides */
+  padding: 12px;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #fffef6, #b5a5a5); /* Inside gradient */
+  border-radius: 8px; /* Smooth corners */
+  border: 1px solid rgba(150, 150, 150, 0.3); /* Subtle border */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Soft outer glow */
 }
-
-/* Equal width for specific input fields */
-.equal-width input,
-.equal-width select {
-  width: 100%;
-  max-width: 180px; /* Fixed width for consistency */
-}
-
-/* Full width for email & password */
-.full-width input {
-  width: 100%;
-}
-
-/* General Input Styles */
-.signup-right-section input,
 .signup-right-section select {
-  width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Same as input fields */
-  color: #333;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
+  width: calc(100% - 20px); /* Full width with padding on sides */
+  padding: 12px;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #fffef6, #b5a5a5); /* Inside gradient */
+  border-radius: 8px; /* Smooth corners */
+  border: 1px solid rgba(150, 150, 150, 0.3); /* Subtle border */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Soft outer glow */
+
 }
-/* Apply similar styles to the select field */
-.signup-right-section select {
-  border-radius: 8px;
-  border: 3px solid transparent;
-}
-/* Button Styles */
 .signup-submit-button {
-  width: 100%;
-  padding: 15px;
+  width: calc(100% - 20px); /* Full width with padding */
+  padding: 12px;
   background-color: #6c63ff;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 .signup-submit-button:hover {
   background-color: #574bff;
 }
 
-/* Logo */
+/* Logo styling */
 .signup-logo {
-  width: 180px;
+  width: 155px; 
   height: auto;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
-/* Google Signup Button */
-.google-signup-wrapper {
-  width: 100%;
-  text-align: center;
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-}
-
-.google-login-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 300px;
-  padding: 12px;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease-in-out;
-}
-
-.google-login-button:hover {
-  background: #f8f8f8;
-}
-
-.google-logo {
-  width: 28px;
-  margin-right: 12px;
-}
-
-.google-login-text {
-  font-size: 18px;
+.signup-title {
+  font-size: 32px; 
   font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .signup-right-section {
-    max-width: 100%;
-    padding: 15px;
-  }
+/* Error message styling */
+.error-message { 
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+/* Increase the font size of form labels */
+.name-label,
+.phone-label,
+.email-label,
+.age-label,
+.gender-label,
+.password-label {
+  font-size: 18px; /* Adjust to your preferred size */
+  font-weight: bold; /* Optional: Make the label text bold */
+  color: #333; /* Ensure the label color stands out */
+}
 
-  .signup-title p {
-    font-size: 36px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .equal-width {
-    width: 100%;
-    max-width: 100%;
-  }
+/* Other form elements remain the same, for example, input styling */
+.signup-right-section input,
+.signup-right-section select {
+  width: calc(100% - 20px); /* Full width with padding on sides */
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }

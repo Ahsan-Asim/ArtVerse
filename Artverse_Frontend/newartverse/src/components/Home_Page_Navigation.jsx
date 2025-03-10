@@ -200,12 +200,12 @@ export const NavigationBar = () => {
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
             <li>
-              <Link to="/become-artist" className="nav-item">
+              <Link to="/Become_Artist" className="nav-item">
                 Become Artist
               </Link>
             </li>
             <li>
-              <Link to="/about" className="nav-item">
+              <Link to="/About_Us" className="nav-item">
                 Why Us
               </Link>
             </li>

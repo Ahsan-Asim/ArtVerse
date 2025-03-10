@@ -74,9 +74,9 @@ export const Navigation = () => {
           <ul className="nav navbar-nav">
             <li><a href="/About_Us" className="nav-item">About</a></li>
             <li><a href="/services" className="nav-item">Services</a></li>
-            <li><a href="#portfolio" className="nav-item">Gallery</a></li>
-            <li><a href="#testimonials" className="nav-item">Testimonials</a></li>
-            <li><a href="#team" className="nav-item">Digital Art</a></li>
+            <li><a href="*" className="nav-item">Gallery</a></li>
+            <li><a href="*" className="nav-item">Testimonials</a></li>
+            <li><a href="*" className="nav-item">Digital Art</a></li>
             <li><a href="/Paintings_Market" className="nav-item">Explore More</a></li>
             <li>
               <div className="buttons">

@@ -7,7 +7,7 @@ import Home_Category_Section from '../components/Home_Page_Category_Section';
 import Home_Page_Artist_Display from '../components/Home_Page_Artist_Display';
 import { NavigationBar } from '../components/Home_Page_Navigation';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal ,Button } from "react-bootstrap";
 
 const HomePage = () => {
   const [user, setUser] = useState(null);

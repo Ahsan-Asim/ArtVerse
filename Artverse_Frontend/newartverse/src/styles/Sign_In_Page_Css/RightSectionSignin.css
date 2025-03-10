@@ -1,9 +1,9 @@
 /* Right Section Styling */
 .right-section1 {
   width: 100%;
-  max-width: 100%;
+  max-width: 400px;
   text-align: center;
-  display: block;
+  
 }
 
 .logo10,.or-text

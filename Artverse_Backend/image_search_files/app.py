@@ -14,6 +14,9 @@ from transformers import CLIPProcessor, CLIPModel
 
 # Initialize Flask
 # Flask App Setup
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 app = Flask(__name__)
 CORS(app, resources={r"/search": {"origins": "*"}})  # Allow frontend requests
 

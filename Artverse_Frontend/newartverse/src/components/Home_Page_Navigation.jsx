@@ -241,7 +241,7 @@ export const NavigationBar = () => {
             </li>
           </ul>
         </div>
-      {/* Navigation Menu */}
+      {/* Navigation Menu
       <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
         <ul className="nav-list">
           <li><Link to="/become-artist" className="nav-item">Become Artist</Link></li>
@@ -251,7 +251,7 @@ export const NavigationBar = () => {
           <li><Link to="/Paintings_Market" className="nav-item">Sculptures</Link></li>
           <li><Link to="/Paintings_Market" className="nav-item">Photography</Link></li>
         </ul>
-      </div>
+      </div> */}
     </nav>
   );
 };

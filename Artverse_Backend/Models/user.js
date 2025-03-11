@@ -2,8 +2,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  firstName: { type: String, required: true, trim: true },
-  lastName: { type: String, required: true, trim: true },
+  // firstName: { type: String, required: true, trim: true },
+  firstName: { type: String, trim: true },
+
+  // lastName: { type: String, required: true, trim: true },
+  lastName: { type: String, trim: true },
+
   phone: { type: String, match: [/^\d{10}$/, 'Please enter a valid phone number'] },
   email: { type: String, required: true, unique: true, lowercase: true },
   age: { type: Number },

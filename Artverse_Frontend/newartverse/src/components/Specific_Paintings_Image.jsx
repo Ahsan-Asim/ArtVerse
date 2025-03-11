@@ -6,7 +6,7 @@ import "../styles/SpecificPage/Specific_Painting_Image.css";
 import LikeIcon from "../assets/images/like_icon.png";
 import ShareIcon from "../assets/images/share_icon.png";
 import BagIcon from "../assets/images/bag_icon.png";
-import EyeIcon from "../assets/images/eye_icon.png";
+// import EyeIcon from "../assets/images/eye_icon.png";
 import BookmarkIcon from "../assets/images/shopping_icon2.png";
 
 export default function Specific_Paintings_Image({ artwork }) {
@@ -26,7 +26,7 @@ export default function Specific_Paintings_Image({ artwork }) {
         userEmail,
         title: artwork.artwork || "Untitled",
         artist: artwork.artist || "Unknown Artist",
-        price: artwork.price,
+        price: artwork.price || "0",
         quantity: 1,
         image: artwork.image,
       });
@@ -63,7 +63,7 @@ export default function Specific_Paintings_Image({ artwork }) {
               onClick={handleAddToCart}
               style={{ cursor: "pointer" }}
             />
-            <img src={EyeIcon} alt="View" className="icon" />
+            {/* <img src={EyeIcon} alt="View" className="icon" /> */}
             <img src={BookmarkIcon} alt="Bookmark" className="icon" />
           </div>
         </div>

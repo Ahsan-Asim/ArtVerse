@@ -1,0 +1,14 @@
+.artist-detail{
+  width: 1350px;
+  height: auto;
+  position: relative;
+  border: 5px solid black;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: rgb(247, 244, 230);
+  box-sizing: border-box;
+  margin: 0px auto;
+  overflow: hidden;
+}

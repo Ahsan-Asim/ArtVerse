@@ -1,19 +1,48 @@
 const mongoose = require('mongoose');
 
 const artworkSchema = new mongoose.Schema({
-  _key: { type: Number, required: true }, // Unique key field
-  image: { type: String, required: true }, // URL of the artwork image
-  artwork: { type: String, required: true }, // Artwork title (e.g., Narmer Palette)
-  style: { type: String }, // Style of the artwork (e.g., Early-Dynastic)
-  artist: { type: String, required: true }, // Artist or civilization (e.g., Ancient Egypt)
-  date: { type: String }, // Year or period of creation (e.g., 3050 BC)
-  type: { type: String }, // Type of artwork (e.g., Sculpture)
-  medium: { type: String }, // Medium used (e.g., Bronze)
-  description: { type: String }, // Description of the artwork
-  width: { type: Number }, // Width in pixels or relevant units
-  height: { type: Number }, // Height in pixels or relevant units
-  price: { type: Number }, // Price of the artwork
-  createdAt: { type: Date, default: Date.now } // Timestamp of record creation
+  _key: { type: Number, unique: true }, // Ensure it's unique
+  image: { type: String, required: true },
+  title: { type: String, required: true },
+  category: String,
+  subject: String,
+  yearProduced: String,
+  medium: String,
+  material: String,
+  style: String,
+  price: Number,
+  height: Number,
+  width: Number,
+  depth: Number,
+  description: String,
+  artist: { type: String, required: true },
 });
 
+// Create the model
+const Artwork = mongoose.model('Artwork', artworkSchema);
+
+// Function to add a new artwork with an auto-incremented `_key`
+const addArtwork = async (artworkData) => {
+  try {
+    // Find the last artwork's `_key`
+    const lastArtwork = await Artwork.findOne().sort({ _key: -1 });
+
+    // Determine the next `_key`
+    const nextKey = lastArtwork ? lastArtwork._key + 1 : 10005;
+
+    // Create the new artwork document
+    const newArtwork = new Artwork({
+      _key: nextKey,
+      ...artworkData
+    });
+
+    // Save to the database
+    await newArtwork.save();
+    console.log("Artwork added successfully with _key:", nextKey);
+  } catch (error) {
+    console.error("Error adding artwork:", error);
+  }
+};
+
+module.exports = { Artwork, addArtwork };
 module.exports = mongoose.model('Artwork', artworkSchema);

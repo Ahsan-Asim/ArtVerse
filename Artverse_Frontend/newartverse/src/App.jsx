@@ -29,6 +29,7 @@ import Artist_studio from './pages/Artist_studio.js';
 import Upload_Artwork from './pages/Upload_Artwork.js';
 import CartPage from './pages/CartPage.js';
 import ProtectedAuthRoute from './pages/ProtectedAuthRoute.jsx'; // Import the protected route
+import Artist_detail from './pages/Artist_detail.js';
 
 
 const App = () => {
@@ -45,39 +46,7 @@ const App = () => {
   );
 };
 
-// const MainContent = () => {
-//   const location = useLocation();
 
-//   return (
-//     <>
-//       <Routes>
-//         <Route path="/" element={<Landing_Page />} />
-//         <Route path="/signin" element={<Sign_In />} />
-//         <Route path="/signup" element={<Sign_Up />} />
-//         <Route path="/home" element={<HomePage />} />
-//         <Route path="/profile" element={<Profile />} />
-//         <Route path="/image_search" element={<ImageSearch />} />
-//         <Route path="/customize/:serviceId" element={<CustomizePage />} />
-//         <Route path="/services" element={<Service_Page />} />
-//         <Route path="/Notification" element={<Notification />} />
-//         <Route path="/Commission" element={<Commission />} />
-//         <Route path="/request-details/:notificationId" element={<RequestDetails />} />
-//         <Route path="/artist-details/:email" element={<ArtistProfile />} />
-//         <Route path="/Paintings_Market" element={<Paintings_Market />} />
-//         <Route path="/Painting" element={<Specific_Painting_Page />} />
-//         <Route path="/search" element={<SearchPage />} />
-//         <Route path="/About_Us" element={<About_Us />} />
-//         <Route path="/Become_Artist" element={<Become_Artist />} />
-//         <Route path="/Artist_studio" element={<Artist_studio />} />
-//         <Route path="/Upload_Artwork" element={<Upload_Artwork />} />
-//         <Route path="/CartPage" element={<CartPage />} />
-//         <Route path="*" element={<NotFoundPage />} />
-//       </Routes>
-//     </>
-//   );
-// };
-
-// export default App;
 
 
 
@@ -118,10 +87,13 @@ const MainContent = () => {
         <Route path="/Painting" element={<Specific_Painting_Page />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/About_Us" element={<About_Us />} />
-        <Route path="/Become_Artist" element={<Become_Artist />} />
+        <Route path="/become-artist" element={<Become_Artist />} />
         <Route path="/Artist_studio" element={<Artist_studio />} />
         <Route path="/Upload_Artwork" element={<Upload_Artwork />} />
-        <Route path="/CartPage" element={<CartPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/artist_detail" element={<Artist_detail />} />
+
+        
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

@@ -26,10 +26,14 @@ export const NavigationBar = () => {
   const role = sessionStorage.getItem("role");
   const token = sessionStorage.getItem("token");
 
-  // ✅ Moved function outside useEffect
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+  // ✅ Logout Function
+  const handleLogout = () => {
+    sessionStorage.clear();  // Clears all session data
+    navigate("/signin");  // Redirects to login page
   };
+
+  // ✅ Handle search
+  const handleSearchChange = (e) => setSearchQuery(e.target.value);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -162,40 +166,47 @@ export const NavigationBar = () => {
               )}
             </div>
 
+            {/* Profile Section with Logout */}
             <div className="profile-section">
-  <Link to="/profile" className="profile-link">
-    <img src={profileImage} alt="Profile Icon" className="icon profile-icon" />
-  </Link>
-  {token && <span className="logged-in-text">Logged In</span>}
-</div>
-
+              <Link to="/profile" className="profile-link">
+                <img src={profileImage} alt="Profile Icon" className="icon profile-icon" />
+              </Link>
+              {token && (
+                <>
+                  <span className="logged-in-text">Logged In</span>
+                  <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
-      <div>
 
-        {/* Welcome Section */}
-        <div className="welcome-section">
-          <h1>Welcome to ArtVerse!</h1>
-        </div>
+      {/* Welcome Section */}
+      <div className="welcome-section">
+        <h1>Welcome to ArtVerse!</h1>
+      </div>
 
-        {/* Search Section */}
-        <div className="nav-row center-box">
-          <form className="search-box" onSubmit={handleSearchSubmit}>
-            <img src={SearchIcon} alt="Search Icon" className="search-symbol" />
-            <input
-              type="text"
-              placeholder="Search Artwork"
-              className="search-field"
-              value={searchQuery}
-              onChange={handleSearchChange}  // ✅ No more ESLint error
-            />
-            <Link to="/image_search">
-              <img src={cameraIcon} alt="Camera Icon" className="photo-icon" />
-            </Link>
-          </form>
-        </div>
+      {/* Search Section */}
+      <div className="nav-row center-box">
+        <form className="search-box" onSubmit={handleSearchSubmit}>
+          <img src={SearchIcon} alt="Search Icon" className="search-symbol" />
+          <input
+            type="text"
+            placeholder="Search Artwork"
+            className="search-field"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <Link to="/image_search">
+            <img src={cameraIcon} alt="Camera Icon" className="photo-icon" />
+          </Link>
+        </form>
+      </div>
 
+<<<<<<< HEAD
         {/* Navigation Menu */}
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
@@ -231,6 +242,18 @@ export const NavigationBar = () => {
             </li>
           </ul>
         </div>
+=======
+      {/* Navigation Menu */}
+      <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
+        <ul className="nav-list">
+          <li><Link to="/become-artist" className="nav-item">Become Artist</Link></li>
+          <li><Link to="/about" className="nav-item">Why Us</Link></li>
+          <li><Link to="/services" className="nav-item">Services</Link></li>
+          <li><Link to="/Paintings_Market" className="nav-item">Paintings</Link></li>
+          <li><Link to="/Paintings_Market" className="nav-item">Sculptures</Link></li>
+          <li><Link to="/Paintings_Market" className="nav-item">Photography</Link></li>
+        </ul>
+>>>>>>> 688871c (All done)
       </div>
     </nav>
   );

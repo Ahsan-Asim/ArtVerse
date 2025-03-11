@@ -81,7 +81,7 @@ export const Navigation = () => {
             <li>
               <div className="buttons">
                 <Link to="/signin" className="login_button">Login</Link>
-                <Link to="/signup" className="signup_button">Signup</Link>
+                <Link to="/signup" className="signup_button" style={{'color':'white'}}>Signup</Link>
               </div>
             </li>
           </ul>

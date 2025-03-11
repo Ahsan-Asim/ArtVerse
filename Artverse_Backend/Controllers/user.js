@@ -98,12 +98,13 @@ exports.googleSignin = async (req, res) => {
       audience: '868206158931-8u3ftrs4ekvg4jitiu02bab01n5hj7q9.apps.googleusercontent.com', // Replace with your Google OAuth 2.0 Client ID
     });
     const { email, name } = ticket.getPayload();
-
+    firstName = name;
+    lastName = name;
     // Check if user exists
     let user = await User.findOne({ email });
     if (!user) {
       // Create a new user if not exists
-      user = new User({ email, name, googleId: token });
+      user = new User({ email, firstName,lastName, googleId: token });
       await user.save();
     }
 

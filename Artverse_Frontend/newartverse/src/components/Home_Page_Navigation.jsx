@@ -206,7 +206,6 @@ export const NavigationBar = () => {
         </form>
       </div>
 
-<<<<<<< HEAD
         {/* Navigation Menu */}
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
@@ -242,7 +241,6 @@ export const NavigationBar = () => {
             </li>
           </ul>
         </div>
-=======
       {/* Navigation Menu */}
       <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
         <ul className="nav-list">
@@ -253,7 +251,6 @@ export const NavigationBar = () => {
           <li><Link to="/Paintings_Market" className="nav-item">Sculptures</Link></li>
           <li><Link to="/Paintings_Market" className="nav-item">Photography</Link></li>
         </ul>
->>>>>>> 688871c (All done)
       </div>
     </nav>
   );

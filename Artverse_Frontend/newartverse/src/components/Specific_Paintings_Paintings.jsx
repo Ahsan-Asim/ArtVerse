@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Install axios if not installed: npm install axios
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/SpecificPage/Specific_Paintings_Paintings.css';
 
 import LikeIcon from '../assets/images/like_icon.png';
@@ -19,36 +20,40 @@ function Specific_Paintings_Paintings() {
 
   return (
     <div>
-      <h1 className='main-headin3' style={{ marginTop: '300px' }}><b>More From Artists</b></h1>
+      <h1 className='main-heading' style={{ marginTop: '300px' }}><b>More From Artists</b></h1>
 
-      <div className="art-cards-container1">
-        {paintings.map((painting, index) => (
-          <div className="art-card1" key={index}>
-            <div className="card-image1" style={{ backgroundImage: `url(${painting.image})` }}></div>
-            <div className="card-details1">
-              <div className="left-details1">
-                <h3 className="art-title1">{painting.title}</h3>
-                <p className="artist-name1">By {painting.artist}</p>
-                <p className="art-type1">{painting.category}</p>
-                <p className="art-material1">{painting.material}</p>
-                <p className="dimensions1">{painting.dimensions}</p>
-              </div>
-              <div className="right-details1">
-                <p className="price-old1">Rs. {painting.oldPrice}</p>
-                <p className="price-new1">Rs. {painting.newPrice}</p>
-                <p className="discount1">{painting.discount}% OFF</p>
+      <div className="art-cards-container">
+        {paintings.map((painting, index) => {
+          const imageUrl = painting.image.startsWith("http")
+            ? painting.image
+            : `http://localhost:4000${painting.image}`;
+
+          return (
+            <div key={index} className="art-card">
+              <Link to="/painting" state={{ artwork: painting }} className="art-card-link">
+                <div className="card-image">
+                  <img src={imageUrl} alt={painting.artwork || "Artwork"} />
+                </div>
+                <div className="card-details">
+                  <h3 className="art-title">{painting.artwork}</h3>
+                  <p className="artist-name">By {painting.artist}</p>
+                  <p className="art-style"><b>Style:</b> {painting.style}</p>
+                  <p className="art-type"><b>Type:</b> {painting.type}</p>
+                  <p className="art-medium"><b>Medium:</b> {painting.medium}</p>
+                  <p className="art-price"><b>Price:</b> Rs. {painting.Price}</p>
+                </div>
+              </Link>
+              <div className="card-buttons">
+                <button className="icon-container">
+                  <img src={LikeIcon} alt="Like" />
+                </button>
+                <button className="icon-container">
+                  <img src={ShoppingIcon} alt="Shopping" />
+                </button>
               </div>
             </div>
-            <div className="card-buttons1">
-              <button className="icon-container1">
-                <img src={LikeIcon} alt="Like" />
-              </button>
-              <button className="icon-container1">
-                <img src={ShoppingIcon} alt="Shopping" />
-              </button>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
+/* Container for the artwork section */
 .specific-artwork-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 20px;
+  background: none !important; /* Ensure no background */
 }
 
 /* Artwork Image Section */
@@ -14,11 +16,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  background: none !important; /* Remove any background */
+  background-image: none !important; /* Ensure no background image */
   border-radius: 10px;
   overflow: hidden;
 }
 
+/* Image inside the artwork section */
 .background-image11 {
   width: 100%;
   height: auto;
@@ -26,7 +30,7 @@
   border-radius: 10px;
 }
 
-/* Artwork Details */
+/* Artwork Details Section */
 .artwork-details-container {
   margin-top: 20px;
   width: 90%;
@@ -53,7 +57,7 @@
   cursor: pointer;
 }
 
-/* Title & Price */
+/* Artwork Title & Price */
 .specific-h2 {
   font-size: 22px;
   margin-bottom: 5px;

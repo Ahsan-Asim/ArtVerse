@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../styles/HomePage/Home_Category_Section.css"; // Ensure to import your custom CSS
 import SerigraphImage from "../assets/images/home2.png";
 import DrawingImage from "../assets/images/home3.png";
@@ -9,6 +10,8 @@ import Image2 from "../assets/images/home7.png";
 import Image3 from "../assets/images/home8.png";
 
 function Home_Category_Section() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const categories = [
     { title: "Serigraphs", image: SerigraphImage },
     { title: "Drawings", image: DrawingImage },
@@ -21,19 +24,19 @@ function Home_Category_Section() {
       title: "Colour Paintings",
       subtitle: "Artist Spotlights",
       image: Image1,
-      link: "/colour-paintings",
+      link: "/Paintings_Market",
     },
     {
       title: "Artist Spotlights",
       subtitle: "Asian Mysticism",
       image: Image2,
-      link: "/artist-spotlights",
+      link: "/Paintings_Market",
     },
     {
       title: "Englo Art",
       subtitle: "British Paintings",
       image: Image3,
-      link: "/englo-art",
+      link: "/Paintings_Market",
     },
   ];
 
@@ -47,7 +50,12 @@ function Home_Category_Section() {
         </div>
         <div className="row category-items">
           {categories.map((category, index) => (
-            <div key={index} className="col-sm-6 col-md-4 col-lg-3 category-item">
+            <div
+              key={index}
+              className="col-sm-6 col-md-4 col-lg-3 category-item"
+              onClick={() => navigate("/Paintings_Market")} // Navigate on click
+              style={{ cursor: "pointer" }} // Indicate clickability
+            >
               <div className="hover-bg">
                 <img
                   src={category.image}
@@ -67,10 +75,11 @@ function Home_Category_Section() {
           <h2 className="collections-title">Curated Collections</h2>
           <div className="row collections-items">
             {collections.map((collection, index) => (
-              <a
+              <div
                 key={index}
-                href={collection.link}
                 className="col-md-6 col-lg-4 collection-card"
+                onClick={() => navigate(collection.link)} // Navigate on click
+                style={{ cursor: "pointer" }} // Indicate clickability
               >
                 <img
                   src={collection.image}
@@ -81,7 +90,7 @@ function Home_Category_Section() {
                   <h3>{collection.title}</h3>
                   <p>{collection.subtitle}</p>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

@@ -73,11 +73,11 @@ export const Navigation = () => {
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`} id="nav-collapse">
           <ul className="nav navbar-nav">
             <li><a href="/About_Us" className="nav-item">About</a></li>
-            <li><a href="/services" className="nav-item">Services</a></li>
-            <li><a href="*" className="nav-item">Gallery</a></li>
-            <li><a href="*" className="nav-item">Testimonials</a></li>
-            <li><a href="*" className="nav-item">Digital Art</a></li>
-            <li><a href="/Paintings_Market" className="nav-item">Explore More</a></li>
+            <li><a href="/signup" className="nav-item">Services</a></li>
+            <li><a href="/signup" className="nav-item">Gallery</a></li>
+            <li><a href="/signup" className="nav-item">Testimonials</a></li>
+            <li><a href="/signup" className="nav-item">Digital Art</a></li>
+            <li><a href="/signup" className="nav-item">Explore More</a></li>
             <li>
               <div className="buttons">
                 <Link to="/signin" className="login_button">Login</Link>

@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import cameraIcon from "../assets/images/camera.jpg";
 import "../styles/HomePage/Home_Page_Navigation.css";
+import NftHome from "../components/Home/Home.js";
 
 // Initialize Socket.io connection
 const socket = io("http://localhost:4000");
@@ -210,7 +211,7 @@ export const NavigationBar = () => {
         <div className={`nav-collapse ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
             <li>
-              <Link to="/Become_Artist" className="nav-item">
+              <Link to="/become-artist" className="nav-item">
                 Become Artist
               </Link>
             </li>
@@ -238,6 +239,9 @@ export const NavigationBar = () => {
               <Link to="/Paintings_Market" className="nav-item">
                 Photography
               </Link>
+            </li>
+            <li>
+            <Link to="/NftHome" className="nav-item">Digital Art</Link>
             </li>
           </ul>
         </div>

@@ -72,11 +72,11 @@ const HomePage = () => {
         <Home_Category_Section />
         <Home_Page_Artist_Display />
         
-        {/* Profile Section */}
+        {/* Profile Section
         <div className="profile-container">
           <img src={user.profilePic || "https://via.placeholder.com/50"} alt="Profile" className="profile-pic" />
           <span className="username">{user.username}</span>
-        </div>
+        </div> */}
 
         <Footer />
       </div>

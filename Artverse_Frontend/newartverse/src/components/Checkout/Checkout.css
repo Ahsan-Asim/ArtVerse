@@ -1,0 +1,271 @@
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.checkout-container h1 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #000;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #e33;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .checkout-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-items h2,
+.checkout-summary h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-item {
+  display: flex;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.checkout-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.checkout-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout-item-details {
+  margin-left: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkout-item-details h3 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.checkout-item-price {
+  font-weight: 600;
+  color: #000;
+}
+
+.processing-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.status-icon.success {
+  background: #0c0;
+  color: white;
+}
+
+.status-icon.error {
+  background: #e33;
+  color: white;
+}
+
+.checkout-item.status-processing {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.checkout-item.status-complete {
+  background: #f0fff0;
+  border: 1px solid #aca;
+}
+
+.checkout-item.status-error {
+  background: #fff0f0;
+  border: 1px solid #eaa;
+}
+
+.checkout-summary {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 2px solid #000;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wallet-info {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.wallet-balance {
+  display: flex;
+  justify-content: space-between;
+}
+
+.insufficient-funds {
+  margin-top: 10px;
+  color: #e33;
+  font-size: 14px;
+}
+
+.primary-button, .secondary-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-button {
+  background: #000;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #333;
+}
+
+.primary-button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.secondary-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Success State */
+.success-message {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  background: #0c0;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.success-message h2 {
+  font-size: 28px;
+  margin: 0 0 15px 0;
+}
+
+.success-message p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.success-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.success-buttons button {
+  max-width: 200px;
+}

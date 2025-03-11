@@ -1,0 +1,182 @@
+.relist-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.relist-modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+.relist-modal-content {
+  padding: 30px;
+}
+
+.relist-modal-content h2 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.nft-preview {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.nft-preview-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.nft-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nft-preview-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.nft-id {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.form-info {
+  background-color: #f0f9ff;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.form-info p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.listing-btn {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for better spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  display: flex; /* Flexbox for spinner alignment */
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+}
+
+.listing-btn:disabled {
+  background-color: #555; /* Darker gray when disabled */
+  cursor: not-allowed; /* Not-allowed cursor when disabled */
+}
+
+.listing-btn:hover:not(:disabled) {
+  background-color: #333; /* Slightly lighter black on hover */
+}
+
+/* Spinner styling */
+.listing-btn .spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Light border for spinner */
+  border-top: 2px solid white; /* White top border for spinner */
+  border-radius: 50%; /* Circular spinner */
+  width: 16px; /* Spinner size */
+  height: 16px; /* Spinner size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin-right: 8px; /* Space between spinner and text */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -59,45 +59,45 @@ const Right_Section_Signin_page = () => {
   };
 
   return (
-    <div className="right-section1">
-      <div className="logo-container">
-        <img src={Logo} alt="ArtVerse Logo" className="logo10" />
-        <p className="sign-title">Sign In to ArtVerse</p>
+    <div className="new-right-section">
+      <div className="new-logo-container">
+        <img src={Logo} alt="ArtVerse Logo" className="new-logo" />
+        <p className="new-sign-title">Sign In to ArtVerse</p>
       </div>
 
-      <form className="signin-form1" onSubmit={handleLogin}>
-        <label className="email-label">Email</label>
+      <form className="new-signin-form" onSubmit={handleLogin}>
+        <label className="new-email-label">Email</label>
         <input
           type="email"
           name="email"
-          className="email-input"
+          className="new-email-input"
           value={credentials.email}
           onChange={handleChange}
           placeholder="Enter your email"
           required
         />
 
-        <div className="password-container">
-          <label className="password-label">Password</label>
-          <span className="forgot-password">Forget?</span>
+        <div className="new-password-container">
+          <label className="new-password-label">Password</label>
+          <span className="new-forgot-password">Forget?</span>
         </div>
         <input
           type="password"
           name="password"
-          className="password-input"
+          className="new-password-input"
           placeholder="8+ Characters"
           value={credentials.password}
           onChange={handleChange}
           required
         />
 
-        <button type="submit" className="signin-button">Sign In</button>
+        <button type="submit" className="new-signin-button">Sign In</button>
       </form>
 
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="new-error-message">{error}</div>}
 
-      <div className="signup-text">
-        Don't have an ArtVerse Account? <Link to="/signup" className="signup-link">Signup</Link>
+      <div className="new-signup-text">
+        Don't have an ArtVerse Account? <Link to="/signup" className="new-signup-link">Signup</Link>
       </div>
     </div>
   );

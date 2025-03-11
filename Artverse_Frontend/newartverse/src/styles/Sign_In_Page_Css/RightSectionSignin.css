@@ -1,72 +1,49 @@
-body{
+body {
   align-items: center;
 }
 
 /* Right Section Styling */
-.right-section1 {
+.new-right-section {
   width: 100%;
   max-width: 400px;
   text-align: center;
-  
 }
 
-.logo10,.or-text
- {
+.new-logo, .new-or-text {
   width: 120px;
   height: auto;
   margin: 0 auto;
   position: relative;
-  bottom: 70px; /* Moves the logo 200px from its normal position */
+  bottom: 70px;
 }
 
-.sign_div1 {
+.new-sign-title {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
   position: relative;
-  bottom: 70px; /* Moves the logo 200px from its normal position */
+  bottom: 70px;
 }
 
-.google-login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 320px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.google-login-btn:hover {
-  background-color: #357ae8;
-}
-
-.signin-form1 {
+.new-signin-form {
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
 }
 
-.email-input,
-.password-input {
+.new-email-input,
+.new-password-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  background: linear-gradient(to right, #fffef6, #b5a5a5); /* Smooth gradient */
+  background: linear-gradient(to right, #fffef6, #b5a5a5);
   border-radius: 8px;
   border: 1px solid rgba(150, 150, 150, 0.3);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Soft glow */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.signin-button {
+.new-signin-button {
   width: 100%;
   padding: 10px;
   background-color: #6c63ff;
@@ -78,57 +55,56 @@ body{
   transition: background-color 0.3s;
 }
 
-.signin-button:hover {
+.new-signin-button:hover {
   background-color: #574bff;
 }
 
-.signup-text {
+.new-signup-text {
   margin-top: 20px;
   font-size: 14px;
   color: #555;
 }
 
-.signup-link {
+.new-signup-link {
   color: #6c63ff;
   text-decoration: none;
 }
 
-.signup-link:hover {
+.new-signup-link:hover {
   text-decoration: underline;
 }
 
 /* Error message styling */
-.error-message {
+.new-error-message {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
 /* Styling for form labels */
-.email-label,
-.password-label {
-  font-size: 18px; /* Increase font size for labels */
+.new-email-label,
+.new-password-label {
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
-  display: block; /* Ensure the label takes up a full line */
+  display: block;
 }
 
 /* Styling for "Forget?" link */
-.password-container {
+.new-password-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.forgot-password {
+.new-forgot-password {
   font-size: 14px;
   color: #6c63ff;
   cursor: pointer;
-  margin-left: 40px; /* Adjust the spacing to move it right by 40px */
+  margin-left: 40px;
 }
 
-/* Optional: Adjust the hover effect for forgot password */
-.forgot-password:hover {
+.new-forgot-password:hover {
   text-decoration: underline;
 }

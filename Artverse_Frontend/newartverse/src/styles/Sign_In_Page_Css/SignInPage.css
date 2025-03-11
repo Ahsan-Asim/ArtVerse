@@ -1,4 +1,5 @@
 
+
 /* General styling for SignInPage */
 .signin-container {
   display: flex;
@@ -28,6 +29,7 @@
   align-items: center;
   padding: 40px; /* Increased padding for larger screens */
   background: white;
+  text-align: center;
 }
 
 /* Responsive design */
